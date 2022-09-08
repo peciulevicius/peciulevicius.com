@@ -14,6 +14,7 @@ const Home: NextPage = () => {
           content="I’m Džiugas, a software engineer, designer and aspiring pilot based in Vilnius City."
         />
       </Head>
+      <div>hello</div>
     </>
   )
 }
