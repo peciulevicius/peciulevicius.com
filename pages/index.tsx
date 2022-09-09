@@ -1,7 +1,6 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <>
       <Head>
@@ -11,12 +10,10 @@ const Home: NextPage = () => {
         </title>
         <meta
           name="description"
-          content="I’m Džiugas, a software engineer, designer and aspiring pilot based in Vilnius City."
+          content="I’m Džiugas, a software engineer, aviation enthusiast and aspiring pilot based in Vilnius City."
         />
       </Head>
       <div>hello</div>
     </>
   );
-};
-
-export default Home;
+}
