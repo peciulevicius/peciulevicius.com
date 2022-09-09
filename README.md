@@ -24,7 +24,6 @@ npm run dev
 
 Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
-
 ## Learn more
 
 To learn more about the technologies used in this site template, see the following resources:
