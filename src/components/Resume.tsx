@@ -1,10 +1,9 @@
 import Image from 'next/future/image';
 
-import BriefcaseIcon from '@/images/icons/BriefcaseIcon';
 import visma from '@/images/logos/visma.svg';
 import { ResumeModel } from '@/lib/types';
-import ArrowDownIcon from '@/images/icons/ArrowDownIcon';
 import { Button } from '@/components/Button';
+import { ArrowDownIcon, BriefcaseIcon } from '@/components/Icons';
 
 function Resume() {
   let resume: ResumeModel[] = [
