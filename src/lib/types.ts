@@ -1,4 +1,7 @@
-export type ContainerProps = {
-  className?: string;
-  children: any;
+export type ResumeModel = {
+  company: string;
+  title: string;
+  logo: string;
+  start: string;
+  end: string;
 };
