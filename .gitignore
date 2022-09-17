@@ -33,6 +33,7 @@ yarn-error.log*
 
 # generated files
 /public/rss/
+tsconfig.tsbuildinfo
 
 # ide files
 /.idea
