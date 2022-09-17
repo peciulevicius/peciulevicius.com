@@ -1,10 +1,6 @@
 import React, { forwardRef } from 'react';
 import clsx from 'clsx';
-
-export type ContainerProps = {
-  className?: string;
-  children: any;
-};
+import { ContainerProps } from '@/lib/types';
 
 const OuterContainer = forwardRef(function OuterContainer(
   { className, children, ...props }: ContainerProps,
