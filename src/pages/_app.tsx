@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
 import '@/styles/globals.css';
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
       </div>
       <div className="relative">
+        <Header />
         <main>
           <Component {...pageProps} />
         </main>
