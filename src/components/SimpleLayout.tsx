@@ -1,10 +1,5 @@
 import { Container } from '@/components/Container';
-
-type SimpleLayoutProps = {
-  title: string;
-  intro: string;
-  children: string;
-};
+import { SimpleLayoutProps } from '@/lib/types';
 
 export function SimpleLayout({ title, intro, children }: SimpleLayoutProps) {
   return (

@@ -1,14 +1,6 @@
 import Link from 'next/link';
 import clsx from 'clsx';
-import { ReactNode } from 'react';
-
-type ButtonProps = {
-  type: 'button' | 'submit' | 'reset';
-  href?: string;
-  variant?: 'primary' | 'secondary';
-  className?: string;
-  children: ReactNode;
-};
+import { ButtonProps } from '@/lib/types';
 
 const variantStyles = {
   primary:
