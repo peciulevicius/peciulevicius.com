@@ -26,7 +26,7 @@ export type ContainerProps = {
 export type SimpleLayoutProps = {
   title: string;
   intro: string;
-  children: string;
+  children: ReactNode;
 };
 
 export type NavLinkProps = {
