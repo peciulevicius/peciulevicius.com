@@ -2,6 +2,17 @@ import Head from 'next/head';
 import { Container } from '@/components/Container';
 import Newsletter from '@/components/Newsletter';
 import Resume from '@/components/Resume';
+import Link from 'next/link';
+import { GitHubIcon, LinkedInIcon } from '@/components/Icons';
+
+// todo: fix prop type
+function SocialLink({ icon: Icon, ...props }: any) {
+  return (
+    <Link className="group -m-1 p-1" {...props} target="_blank">
+      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    </Link>
+  );
+}
 
 export default function Home() {
   return (
@@ -26,6 +37,18 @@ export default function Home() {
             I build new projects just to tickle my brain and I love creating UI
             effects, animations and intuitive, dynamic user experiences.
           </p>
+          <div className="mt-6 flex gap-6">
+            <SocialLink
+              href="https://github.com/dziugaspeciulevicius"
+              aria-label="Follow on GitHub"
+              icon={GitHubIcon}
+            />
+            <SocialLink
+              href="https://linkedin.com/in/dziugaspeciulevicius/"
+              aria-label="Follow on LinkedIn"
+              icon={LinkedInIcon}
+            />
+          </div>
         </div>
       </Container>
       <Container className="mt-24 md:mt-28">
