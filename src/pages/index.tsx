@@ -1,7 +1,60 @@
 import Head from 'next/head';
+import Image from 'next/future/image';
+import Link from 'next/link';
+import { GitHubIcon, LinkedInIcon } from '@/components/Icons';
 import { Container } from '@/components/Container';
 import Newsletter from '@/components/Newsletter';
 import Resume from '@/components/Resume';
+import image1 from '@/images/photos/image-1.jpg';
+import image2 from '@/images/photos/image-2.jpg';
+import image3 from '@/images/photos/image-3.jpg';
+import image4 from '@/images/photos/image-4.jpg';
+import image5 from '@/images/photos/image-5.jpg';
+import clsx from 'clsx';
+
+// todo: fix prop type
+function SocialLink({ icon: Icon, ...props }: any) {
+  return (
+    <Link className="group -m-1 p-1" {...props} target="_blank">
+      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    </Link>
+  );
+}
+
+function Photos() {
+  let rotations = [
+    'rotate-2',
+    '-rotate-2',
+    'rotate-2',
+    'rotate-2',
+    '-rotate-2'
+  ];
+
+  return (
+    <>
+      <div className="mt-16 sm:mt-20">
+        <div className="-my-4 flex gap-5 overflow-x-auto py-4 sm:gap-8 2xl:justify-center 2xl:overflow-hidden">
+          {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+            <div
+              key={image.src}
+              className={clsx(
+                'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
+                rotations[imageIndex % rotations.length]
+              )}
+            >
+              <Image
+                src={image}
+                alt=""
+                sizes="(min-width: 640px) 18rem, 11rem"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}
 
 export default function Home() {
   return (
@@ -26,8 +79,22 @@ export default function Home() {
             I build new projects just to tickle my brain and I love creating UI
             effects, animations and intuitive, dynamic user experiences.
           </p>
+          <div className="mt-6 flex gap-6">
+            <SocialLink
+              href="https://github.com/dziugaspeciulevicius"
+              aria-label="Follow on GitHub"
+              icon={GitHubIcon}
+            />
+            <SocialLink
+              href="https://linkedin.com/in/dziugaspeciulevicius/"
+              aria-label="Follow on LinkedIn"
+              icon={LinkedInIcon}
+            />
+          </div>
         </div>
       </Container>
+
+      <Photos />
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="space-y-10 lg:pl-16 xl:pl-24">

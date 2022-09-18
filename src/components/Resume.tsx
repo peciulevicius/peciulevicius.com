@@ -57,7 +57,7 @@ function Resume() {
         ))}
       </ol>
       <Button
-        type={'button'}
+        type="button"
         href="#"
         variant="secondary"
         className="group mt-6 w-full"
