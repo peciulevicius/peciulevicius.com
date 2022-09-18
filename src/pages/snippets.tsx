@@ -7,33 +7,33 @@ import logoVisma from '@/images/logos/visma.svg';
 
 const snippets = [
   {
-    name: 'Planetaria',
+    name: 'Snippet 1',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
+      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     logo: logoVisma
   },
   {
-    name: 'Animaginary',
+    name: 'Snippet 2',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
+      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     logo: logoVisma
   },
   {
-    name: 'HelioStream',
+    name: 'Snippet 3',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
+      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     logo: logoVisma
   },
   {
-    name: 'cosmOS',
+    name: 'Snippet 4',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
+      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     logo: logoVisma
   },
   {
-    name: 'OpenShuttle',
+    name: 'Snippet 5',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
+      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     logo: logoVisma
   }
 ];
