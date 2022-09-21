@@ -15,7 +15,7 @@ export default function Custom404() {
       <Container className="mt-16 sm:mt-32">
         <div className="mx-auto max-w-max">
           <main className="sm:flex">
-            <p className="text-4xl font-bold tracking-tight text-amber-600 sm:text-5xl">
+            <p className="text-4xl font-bold tracking-tight text-amber-600 dark:text-amber-500 sm:text-5xl">
               404
             </p>
             <div className="sm:ml-6">
@@ -28,7 +28,7 @@ export default function Custom404() {
                 </p>
               </div>
               <div className="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
-                <Button type="button" href="/" className="ml-4 flex-none ">
+                <Button type="button" href="/" className="flex-none ">
                   Return home
                 </Button>
                 <Button
