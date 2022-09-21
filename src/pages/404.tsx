@@ -28,13 +28,13 @@ export default function Custom404() {
                 </p>
               </div>
               <div className="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
-                <Button type="submit" href={'/'} className="ml-4 flex-none ">
+                <Button type="button" href="/" className="ml-4 flex-none ">
                   Return home
                 </Button>
                 <Button
-                  type="submit"
+                  type="button"
                   variant="secondary"
-                  href={'/blog'}
+                  href="/blog"
                   className="ml-4 flex-none "
                 >
                   Read a blog
