@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/future/image';
 import Link from 'next/link';
-import { GitHubIcon, LinkedInIcon } from '@/components/Icons';
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/components/Icons';
 import { Container } from '@/components/Container';
 import Newsletter from '@/components/Newsletter';
 import Resume from '@/components/Resume';
@@ -80,6 +80,11 @@ export default function Home() {
             effects, animations and intuitive, dynamic user experiences.
           </p>
           <div className="mt-6 flex gap-6">
+            <SocialLink
+              href="https://twitter.com/dpeciulevicius"
+              aria-label="Follow on Twitter"
+              icon={TwitterIcon}
+            />
             <SocialLink
               href="https://github.com/dziugaspeciulevicius"
               aria-label="Follow on GitHub"
