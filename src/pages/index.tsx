@@ -33,7 +33,7 @@ function Photos() {
   return (
     <>
       <div className="mt-16 sm:mt-20">
-        <div className="-my-4 flex gap-5 overflow-x-auto py-4 sm:gap-8 2xl:justify-center 2xl:overflow-hidden">
+        <div className="-my-4 flex gap-5 overflow-x-auto px-5 py-4 sm:gap-8 2xl:justify-center 2xl:overflow-hidden">
           {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
             <div
               key={image.src}
