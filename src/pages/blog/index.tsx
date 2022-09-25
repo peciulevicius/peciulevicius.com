@@ -33,8 +33,6 @@ function BlogPost({ blog }: { blog: BlogPostModel }) {
 }
 
 export default function Blog({ blogPosts }: { blogPosts: BlogPostModel[] }) {
-  console.log('blogPosts', blogPosts);
-
   return (
     <>
       <Head>
