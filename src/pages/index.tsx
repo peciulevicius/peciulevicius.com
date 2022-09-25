@@ -11,6 +11,23 @@ import image3 from '@/images/photos/image-3.jpg';
 import image4 from '@/images/photos/image-4.jpg';
 import image5 from '@/images/photos/image-5.jpg';
 import clsx from 'clsx';
+import { BlogPostModel } from '@/lib/types';
+import { Card } from '@/components/Card';
+import { formatDate } from '@/lib/formatDate';
+import { getAllBlogPosts } from '@/lib/getAllBlogPosts';
+
+function BlogPostCard({ blog }: { blog: BlogPostModel }) {
+  return (
+    <Card as="article">
+      <Card.Title href={`/blog/${blog.slug}`}>{blog.title}</Card.Title>
+      <Card.Eyebrow as="time" dateTime={blog.date} decorate>
+        {formatDate(blog.date)}
+      </Card.Eyebrow>
+      <Card.Description>{blog.description}</Card.Description>
+      <Card.Cta>Read article</Card.Cta>
+    </Card>
+  );
+}
 
 // todo: fix prop type
 function SocialLink({ icon: Icon, ...props }: any) {
@@ -56,7 +73,7 @@ function Photos() {
   );
 }
 
-export default function Home() {
+export default function Home({ blogPosts }: { blogPosts: BlogPostModel[] }) {
   return (
     <>
       <Head>
@@ -103,8 +120,10 @@ export default function Home() {
 
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex hidden flex-col gap-16 dark:text-white lg:block">
-            This section is under development...
+          <div className="flex flex-col gap-16">
+            {blogPosts.map((blog) => (
+              <BlogPostCard key={blog.slug} blog={blog} />
+            ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Newsletter />
@@ -114,4 +133,14 @@ export default function Home() {
       </Container>
     </>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      blogPosts: (await getAllBlogPosts())
+        .slice(0, 2)
+        .map(({ component, ...meta }) => meta)
+    }
+  };
 }
