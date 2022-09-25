@@ -8,6 +8,13 @@ export type ResumeModel = {
   end: string;
 };
 
+export type BlogPostModel = {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+};
+
 // === component props ====
 
 export type ButtonProps = {
