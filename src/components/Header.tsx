@@ -4,7 +4,8 @@ import { useRouter } from 'next/router';
 import { Popover, Transition } from '@headlessui/react';
 import clsx from 'clsx';
 import { Container } from '@/components/Container';
-import avatarImage from '@/images/avatar.jpg';
+import logoWhite from '@/images/logos/light-bg-transparent.svg';
+import logoBlack from '@/images/logos/dark-bg-transparent.svg';
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { ChevronDownIcon, CloseIcon } from './Icons';
 import { useTheme } from 'next-themes';
@@ -114,7 +115,7 @@ function DesktopNavigation(props: any) {
   );
 }
 
-function ThemeToggle() {
+function ToggleTheme() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -125,7 +126,7 @@ function ThemeToggle() {
     <button
       type="button"
       aria-label="Toggle dark mode"
-      className="group rounded-full px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:ring-white/10 dark:hover:ring-white/20"
+      className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
     >
       {mounted && (
@@ -178,6 +179,13 @@ function AvatarContainer({ className, ...props }: any) {
 
 // todo: fix prop types
 function Avatar({ large = false, className, ...props }: any) {
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <Link
       href="/"
@@ -185,16 +193,18 @@ function Avatar({ large = false, className, ...props }: any) {
       className={clsx(className, 'pointer-events-auto')}
       {...props}
     >
-      <Image
-        src={avatarImage}
-        alt=""
-        sizes={large ? '4rem' : '2.25rem'}
-        className={clsx(
-          'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-          large ? 'h-16 w-16' : 'h-9 w-9'
-        )}
-        priority
-      />
+      {mounted && (
+        <Image
+          src={resolvedTheme === 'dark' ? logoWhite : logoBlack}
+          alt="logo"
+          sizes={large ? '4rem' : '2.25rem'}
+          className={clsx(
+            'rounded-full object-cover',
+            large ? 'h-16 w-16' : 'h-9 w-9'
+          )}
+          priority
+        />
+      )}
     </Link>
   );
 }
@@ -359,7 +369,7 @@ export function Header() {
               </div>
               <div className="flex justify-end md:flex-1">
                 <div className="pointer-events-auto">
-                  <ThemeToggle />
+                  <ToggleTheme />
                 </div>
               </div>
             </div>

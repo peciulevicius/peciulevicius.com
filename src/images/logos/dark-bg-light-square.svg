@@ -1,0 +1,18 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="500" height="500" fill="white"/>
+<line x1="121.136" y1="400" x2="444.864" y2="400" stroke="#18181A" stroke-width="40"/>
+<ellipse cx="121.136" cy="400" rx="18.136" ry="20" fill="#18181A"/>
+<ellipse cx="444.864" cy="400" rx="18.136" ry="20" fill="#18181A"/>
+<line x1="55.3535" y1="403.534" x2="206.096" y2="164.919" stroke="#18181A" stroke-width="40"/>
+<ellipse cx="55.3535" cy="403.534" rx="15.8119" ry="20" transform="rotate(-57.7179 55.3535 403.534)" fill="#18181A"/>
+<ellipse cx="206.096" cy="164.919" rx="15.8119" ry="20" transform="rotate(-57.7179 206.096 164.919)" fill="#18181A"/>
+<line x1="245.717" y1="99.7167" x2="442.774" y2="397.404" stroke="#18181A" stroke-width="40"/>
+<circle cx="245.717" cy="99.7168" r="20" transform="rotate(56.497 245.717 99.7168)" fill="#18181A"/>
+<circle cx="442.774" cy="397.404" r="20" transform="rotate(56.497 442.774 397.404)" fill="#18181A"/>
+<ellipse cx="167.78" cy="328" rx="19.7802" ry="20" fill="#18181A"/>
+<ellipse cx="308.22" cy="328" rx="19.7802" ry="20" fill="#18181A"/>
+<line x1="167.78" y1="328" x2="308.22" y2="328" stroke="#18181A" stroke-width="40"/>
+<ellipse cx="207.785" cy="171.31" rx="25.5055" ry="20" transform="rotate(57.17 207.785 171.31)" fill="#18181A"/>
+<ellipse cx="305.962" cy="323.476" rx="25.5055" ry="20" transform="rotate(57.17 305.962 323.476)" fill="#18181A"/>
+<line x1="207.785" y1="171.31" x2="305.962" y2="323.476" stroke="#18181A" stroke-width="40"/>
+</svg>
