@@ -12,8 +12,13 @@ import image4 from '@/images/photos/image-4.jpg';
 import image5 from '@/images/photos/image-5.jpg';
 import clsx from 'clsx';
 
-// todo: fix prop type
-function SocialLink({ icon: Icon, ...props }: any) {
+function SocialLink({
+  icon: Icon,
+  ...props
+}: {
+  icon: any;
+  href: string;
+}): JSX.Element {
   return (
     <Link className="group -m-1 p-1" {...props} target="_blank">
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
@@ -21,7 +26,7 @@ function SocialLink({ icon: Icon, ...props }: any) {
   );
 }
 
-function Photos() {
+function Photos(): JSX.Element {
   let rotations = [
     'rotate-2',
     '-rotate-2',
