@@ -86,12 +86,12 @@ export default function Home() {
               icon={TwitterIcon}
             />
             <SocialLink
-              href="https://github.com/dziugaspeciulevicius"
+              href="https://github.com/peciulevicius"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com/in/dziugaspeciulevicius/"
+              href="https://linkedin.com/in/peciulevicius"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
