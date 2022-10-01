@@ -1,6 +1,22 @@
-# peciulevicius.com
+<div align="center">
+  <img alt="Logo" src="https://raw.githubusercontent.com/peciulevicius/peciulevicius.com/main/src/images/logos/light-bg-dark-round-border.svg?token=GHSAT0AAAAAABYFMNYUTMQ6MXVYF4VPH4FUYZYAYOA" width="100" />
+</div>
+<h1 align="center">
+  peciulevicius.com - v2
+</h1>
+<p align="center">
+  Second iteration of <a href="https://peciulevicius.com" target="_blank">peciulevicius.com</a> built with <a href="https://nextjs.org/" target="_blank">Next.js</a> and hosted with <a href="https://vercel.com/" target="_blank">Vercel</a>
+</p>
+<p align="center">
+  Previous iteration:
+  <a href="https://github.com/peciulevicius/dziugaspeciulevicius.github.io" target="_blank">v1</a>
+</p>
 
----
+<p align="center">
+<img alt="vercel status" src="http://therealsujitk-vercel-badge.vercel.app/?app=peciulevicius.com&style=for-the-badge&logo=true" />
+</p>
+
+![demo](src/images/demo.png)
 
 ## Getting started
 
