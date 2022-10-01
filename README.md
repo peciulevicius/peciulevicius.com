@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Logo" src="https://raw.githubusercontent.com/peciulevicius/peciulevicius.com/main/src/images/logos/light-bg-dark-round-border.svg?token=GHSAT0AAAAAABYFMNYUTMQ6MXVYF4VPH4FUYZYAYOA" width="100" />
+  <img alt="Logo" src="src/images/logos/light-bg-dark-round-border.svg" width="100" />
 </div>
 <h1 align="center">
   peciulevicius.com - v2
