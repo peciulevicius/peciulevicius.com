@@ -1,8 +1,17 @@
 import Link from 'next/link';
 import clsx from 'clsx';
 import { ChevronRightIcon } from '@/components/Icons';
+import { ElementType, ReactNode } from 'react';
 
-export function Card({ as: Component = 'div', className, children }: any) {
+export function Card({
+  as: Component = 'div',
+  className,
+  children
+}: {
+  as?: ElementType;
+  className?: string;
+  children: ReactNode;
+}) {
   return (
     <Component
       className={clsx(className, 'group relative flex flex-col items-start')}
@@ -12,7 +21,13 @@ export function Card({ as: Component = 'div', className, children }: any) {
   );
 }
 
-Card.Link = function CardLink({ children, ...props }: any) {
+Card.Link = function CardLink({
+  children,
+  ...props
+}: {
+  children: ReactNode;
+  href: string;
+}) {
   return (
     <>
       <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
@@ -24,7 +39,15 @@ Card.Link = function CardLink({ children, ...props }: any) {
   );
 };
 
-Card.Title = function CardTitle({ as: Component = 'h2', href, children }: any) {
+Card.Title = function CardTitle({
+  as: Component = 'h2',
+  href,
+  children
+}: {
+  as?: ElementType;
+  href?: string;
+  children: ReactNode;
+}) {
   return (
     <Component className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
@@ -32,7 +55,11 @@ Card.Title = function CardTitle({ as: Component = 'h2', href, children }: any) {
   );
 };
 
-Card.Description = function CardDescription({ children }: any) {
+Card.Description = function CardDescription({
+  children
+}: {
+  children: ReactNode;
+}) {
   return (
     <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
       {children}
@@ -40,7 +67,7 @@ Card.Description = function CardDescription({ children }: any) {
   );
 };
 
-Card.Cta = function CardCta({ children }: any) {
+Card.Cta = function CardCta({ children }: { children: ReactNode }) {
   return (
     <div
       aria-hidden="true"
@@ -58,7 +85,12 @@ Card.Eyebrow = function CardEyebrow({
   className,
   children,
   ...props
-}: any) {
+}: {
+  as?: ElementType;
+  decorate?: boolean;
+  className?: string;
+  children: ReactNode;
+}) {
   return (
     <Component
       className={clsx(

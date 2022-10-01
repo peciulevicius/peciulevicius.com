@@ -1,15 +1,19 @@
 import Image from 'next/future/image';
-
 import visma from '@/images/logos/visma.svg';
-import { ResumeModel } from '@/lib/types';
 import { Button } from '@/components/Button';
 import { ArrowDownIcon, BriefcaseIcon } from '@/components/Icons';
 
 function Resume() {
-  let resume: ResumeModel[] = [
+  let resume: {
+    company: string;
+    title: string;
+    logo: string;
+    start: string;
+    end: string;
+  }[] = [
     {
       company: 'Visma Lietuva',
-      title: 'Frontend Web Developer',
+      title: 'Frontend Web (Angular) Developer',
       logo: visma,
       start: '2021',
       end: 'Present'

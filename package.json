@@ -9,7 +9,9 @@
     "lint": "next lint",
     "prepare": "husky install"
   },
-  "browserslist": "defaults, not ie <= 11",
+  "browserslist": [
+    "defaults, not ie <= 11"
+  ],
   "dependencies": {
     "@headlessui/react": "^1.7.0",
     "@mapbox/rehype-prism": "^0.8.0",

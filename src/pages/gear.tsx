@@ -2,8 +2,15 @@ import Head from 'next/head';
 import { SimpleLayout } from '@/layouts/SimpleLayout';
 import { Card } from '@/components/Card';
 import { Section } from '@/components/Section';
+import React, { ReactNode } from 'react';
 
-function ToolsSection({ children, ...props }: any) {
+function ToolsSection({
+  children,
+  ...props
+}: {
+  title: string;
+  children: ReactNode;
+}) {
   return (
     <Section {...props}>
       <ul role="list" className="space-y-16">
@@ -13,7 +20,15 @@ function ToolsSection({ children, ...props }: any) {
   );
 }
 
-function Tool({ title, href, children }: any) {
+function Tool({
+  title,
+  href,
+  children
+}: {
+  title: string;
+  href?: string;
+  children: string;
+}) {
   return (
     <Card as="li">
       <Card.Title as="h3" href={href}>
@@ -113,7 +128,7 @@ export default function Gear() {
               nisi ut aliquip ex ea commodo consequat.
             </Tool>
           </ToolsSection>
-        </div>{' '}
+        </div>
       </SimpleLayout>
     </>
   );
