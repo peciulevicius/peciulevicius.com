@@ -5,7 +5,7 @@ import { Card } from '@/components/Card';
 import { formatDate } from '@/lib/formatDate';
 import { BlogPostModel } from '@/lib/types';
 
-function BlogPost({ blog }: { blog: BlogPostModel }) {
+function BlogPost(blog: { blog: BlogPostModel }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">

@@ -6,12 +6,25 @@ import clsx from 'clsx';
 import { Container } from '@/components/Container';
 import logoWhite from '@/images/logos/light-bg-transparent.svg';
 import logoBlack from '@/images/logos/dark-bg-transparent.svg';
-import { Fragment, useEffect, useRef, useState } from 'react';
+import {
+  CSSProperties,
+  Fragment,
+  ReactElement,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState
+} from 'react';
 import { ChevronDownIcon, CloseIcon } from './Icons';
 import { useTheme } from 'next-themes';
 
-// todo: fix prop types
-function MobileNavItem({ href, children }: any) {
+function MobileNavItem({
+  href,
+  children
+}: {
+  href: string;
+  children: ReactNode;
+}) {
   return (
     <li>
       <Popover.Button as={Link} href={href} className="block py-2">
@@ -21,8 +34,7 @@ function MobileNavItem({ href, children }: any) {
   );
 }
 
-// todo: fix prop types
-function MobileNavigation(props: any) {
+function MobileNavigation(props: { className: string }) {
   return (
     <Popover {...props}>
       <Popover.Button className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
@@ -77,8 +89,7 @@ function MobileNavigation(props: any) {
   );
 }
 
-// todo: fix prop types
-function NavItem({ href, children }: any) {
+function NavItem({ href, children }: { href: string; children: ReactNode }) {
   let isActive = useRouter().pathname === href;
 
   return (
@@ -101,8 +112,7 @@ function NavItem({ href, children }: any) {
   );
 }
 
-// todo: fix prop types
-function DesktopNavigation(props: any) {
+function DesktopNavigation(props: { className: string }) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
@@ -164,8 +174,14 @@ function clamp(number: number, a: number, b: number) {
   return Math.min(Math.max(number, min), max);
 }
 
-// todo: fix prop types
-function AvatarContainer({ className, ...props }: any) {
+function AvatarContainer({
+  className,
+  ...props
+}: {
+  className?: string;
+  style?: CSSProperties;
+  children?: ReactElement;
+}) {
   return (
     <div
       className={clsx(
@@ -177,8 +193,15 @@ function AvatarContainer({ className, ...props }: any) {
   );
 }
 
-// todo: fix prop types
-function Avatar({ large = false, className, ...props }: any) {
+function Avatar({
+  large = false,
+  className,
+  ...props
+}: {
+  large?: boolean;
+  className?: string;
+  style?: CSSProperties;
+}) {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
 
@@ -212,25 +235,20 @@ function Avatar({ large = false, className, ...props }: any) {
 export function Header() {
   let isHomePage = useRouter().pathname === '/';
 
-  let headerRef = useRef();
-  let avatarRef = useRef();
+  let headerRef = useRef<HTMLElement>(null);
+  let avatarRef = useRef<HTMLElement>(null);
   let isInitial = useRef(true);
 
   useEffect(() => {
-    // todo: fix @ts-ignore
-    // @ts-ignore
     let downDelay = avatarRef.current?.offsetTop ?? 0;
     let upDelay = 64;
 
-    // todo: fix prop types
-    function setProperty(property: any, value: any) {
+    function setProperty(property: string, value: string) {
       document.documentElement.style.setProperty(property, value);
     }
 
     function updateHeaderStyles() {
-      // todo: fix @ts-ignore
-      // @ts-ignore
-      let { top, height } = headerRef.current.getBoundingClientRect();
+      let { top, height } = headerRef.current!.getBoundingClientRect();
       let scrollY = clamp(
         window.scrollY,
         0,
@@ -284,7 +302,7 @@ export function Header() {
       let borderTransform = `translate3d(${borderX}rem, 0, 0) scale(${borderScale})`;
 
       setProperty('--avatar-border-transform', borderTransform);
-      setProperty('--avatar-border-opacity', scale === toScale ? 1 : 0);
+      setProperty('--avatar-border-opacity', scale === toScale ? '1' : '0');
     }
 
     function updateStyles() {
@@ -298,7 +316,6 @@ export function Header() {
     window.addEventListener('resize', updateStyles);
 
     return () => {
-      // todo: fix @ts-ignore
       // @ts-ignore
       window.removeEventListener('scroll', updateStyles, { passive: true });
       window.removeEventListener('resize', updateStyles);
@@ -317,14 +334,12 @@ export function Header() {
         {isHomePage && (
           <>
             <div
-              // todo: fix @ts-ignore
               // @ts-ignore
               ref={avatarRef}
               className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"
             />
             <Container
               className="top-0 order-last -mb-3 pt-3"
-              // todo: fix @ts-ignore
               // @ts-ignore
               style={{ position: 'var(--header-position)' }}
             >
@@ -346,11 +361,9 @@ export function Header() {
           </>
         )}
         <div
-          // todo: fix @ts-ignore
           // @ts-ignore
           ref={headerRef}
           className="top-0 z-10 pt-6"
-          // todo: fix @ts-ignore
           // @ts-ignore
           style={{ position: 'var(--header-position)' }}
         >

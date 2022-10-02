@@ -29,8 +29,13 @@ function BlogPostCard({ blog }: { blog: BlogPostModel }) {
   );
 }
 
-// todo: fix prop type
-function SocialLink({ icon: Icon, ...props }: any) {
+function SocialLink({
+  icon: Icon,
+  ...props
+}: {
+  icon: any;
+  href: string;
+}): JSX.Element {
   return (
     <Link className="group -m-1 p-1" {...props} target="_blank">
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
@@ -38,7 +43,7 @@ function SocialLink({ icon: Icon, ...props }: any) {
   );
 }
 
-function Photos() {
+function Photos(): JSX.Element {
   let rotations = [
     'rotate-2',
     '-rotate-2',
@@ -103,12 +108,12 @@ export default function Home({ blogPosts }: { blogPosts: BlogPostModel[] }) {
               icon={TwitterIcon}
             />
             <SocialLink
-              href="https://github.com/dziugaspeciulevicius"
+              href="https://github.com/peciulevicius"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com/in/dziugaspeciulevicius/"
+              href="https://linkedin.com/in/peciulevicius"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
