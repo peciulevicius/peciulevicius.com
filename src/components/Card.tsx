@@ -90,6 +90,7 @@ Card.Eyebrow = function CardEyebrow({
   decorate?: boolean;
   className?: string;
   children: ReactNode;
+  dateTime?: string;
 }) {
   return (
     <Component
