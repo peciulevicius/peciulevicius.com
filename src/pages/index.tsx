@@ -33,6 +33,7 @@ function SocialLink({
   icon: Icon,
   ...props
 }: {
+  // todo: fix 'any' type
   icon: any;
   href: string;
 }): JSX.Element {
