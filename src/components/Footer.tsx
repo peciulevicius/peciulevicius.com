@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import { Container } from '@/components/Container';
-import { NavLinkProps } from '@/lib/types';
 
-function NavLink({ href, children }: NavLinkProps) {
+function NavLink({ href, children }: { href: string; children: string }) {
   return (
     <Link
       href={href}

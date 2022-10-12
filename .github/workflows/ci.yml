@@ -17,6 +17,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
+    if: ${{ github.actor != 'dependabot[bot]' }} # Ignore dependabot triggering further builds
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
