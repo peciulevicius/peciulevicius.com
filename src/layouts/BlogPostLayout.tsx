@@ -1,9 +1,9 @@
 import Head from 'next/head';
-
 import { Container } from '@/components/Container';
 import { formatDate } from '@/lib/formatDate';
 import { Prose } from '@/components/Prose';
 
+// todo: fix 'any' type
 export function BlogPostLayout({ children, meta, isRssFeed = false }: any) {
   if (isRssFeed) {
     return children;

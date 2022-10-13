@@ -11,3 +11,10 @@ export type BlogPostModel = {
   date: string;
   description: string;
 };
+
+export type CodeSnippetModel = {
+  slug: string;
+  title: string;
+  description: string;
+  logo: string;
+};
