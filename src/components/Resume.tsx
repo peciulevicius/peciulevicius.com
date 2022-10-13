@@ -12,7 +12,7 @@ function Resume() {
     end: string;
   }[] = [
     {
-      company: 'Visma Lietuva',
+      company: 'Visma Tech Lietuva',
       title: 'Frontend Web (Angular) Developer',
       logo: visma,
       start: '2021',

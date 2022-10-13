@@ -56,12 +56,12 @@ function Photos(): JSX.Element {
   return (
     <>
       <div className="mt-16 sm:mt-20">
-        <div className="-my-4 flex gap-5 overflow-x-auto px-5 py-4 sm:gap-8 2xl:justify-center 2xl:overflow-hidden">
+        <div className="scrollbar-thumb scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500/[0.16] scrollbar-thumb-rounded-xl dark:scrollbar-track-slate-500/[0.16] dark:scrollbar-thumb-slate-500/50 -my-4 flex snap-x gap-5 overflow-x-auto px-5 py-4 pb-4 sm:snap-none sm:gap-8 lg:px-0 2xl:justify-center 2xl:overflow-hidden">
           {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
             <div
               key={image.src}
               className={clsx(
-                'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
+                'relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
                 rotations[imageIndex % rotations.length]
               )}
             >
