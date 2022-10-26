@@ -9,10 +9,7 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
     legacyBrowsers: false,
-    browsersListForSwc: true,
-    fontLoaders: [
-      { loader: '@next/font/google', options: { subsets: ['latin'] } }
-    ]
+    browsersListForSwc: true
   }
 };
 
