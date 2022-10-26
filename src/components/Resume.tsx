@@ -1,4 +1,4 @@
-import Image from 'next/future/image';
+import Image from 'next/image';
 import visma from '@/images/logos/visma.svg';
 import { Button } from '@/components/Button';
 import { ArrowDownIcon, BriefcaseIcon } from '@/components/Icons';
