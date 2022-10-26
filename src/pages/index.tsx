@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/components/Icons';
 import { Container } from '@/components/Container';
@@ -56,7 +56,7 @@ function Photos(): JSX.Element {
   return (
     <>
       <div className="mt-16 sm:mt-20">
-        <div className="scrollbar-thumb scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500/[0.16] scrollbar-thumb-rounded-xl dark:scrollbar-track-slate-500/[0.16] dark:scrollbar-thumb-slate-500/50 -my-4 flex snap-x gap-5 overflow-x-auto px-5 py-4 pb-4 sm:snap-none sm:gap-8 lg:px-0 2xl:justify-center 2xl:overflow-hidden">
+        <div className="scrollbar-thumb -my-4 flex snap-x gap-5 overflow-x-auto px-5 py-4 pb-4 scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500/[0.16] scrollbar-thumb-rounded-xl dark:scrollbar-track-slate-500/[0.16] dark:scrollbar-thumb-slate-500/50 sm:snap-none sm:gap-8 lg:px-0 2xl:justify-center 2xl:overflow-hidden">
           {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
             <div
               key={image.src}

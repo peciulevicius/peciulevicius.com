@@ -7,11 +7,12 @@ const nextConfig = {
   pageExtensions: ['jsx', 'tsx', 'mdx'],
   reactStrictMode: true,
   experimental: {
-    newNextLinkBehavior: true,
     scrollRestoration: true,
-    images: {
-      allowFutureImage: true
-    }
+    legacyBrowsers: false,
+    browsersListForSwc: true,
+    fontLoaders: [
+      { loader: '@next/font/google', options: { subsets: ['latin'] } }
+    ]
   }
 };
 
