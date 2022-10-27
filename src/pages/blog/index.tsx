@@ -4,6 +4,7 @@ import { getAllBlogPosts } from '@/lib/getAllBlogPosts';
 import { Card } from '@/components/Card';
 import { formatDate } from '@/lib/formatDate';
 import { BlogPostModel } from '@/lib/types';
+import { InferGetStaticPropsType } from 'next';
 
 function BlogPost({ blog }: { blog: BlogPostModel }) {
   return (
@@ -32,7 +33,9 @@ function BlogPost({ blog }: { blog: BlogPostModel }) {
   );
 }
 
-export default function Blog({ blogPosts }: { blogPosts: BlogPostModel[] }) {
+export default function Blog(
+  props: InferGetStaticPropsType<typeof getStaticProps>
+) {
   return (
     <>
       <Head>
@@ -48,7 +51,7 @@ export default function Blog({ blogPosts }: { blogPosts: BlogPostModel[] }) {
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
-            {blogPosts.map((blog) => (
+            {props.blogPosts.map((blog) => (
               <BlogPost key={blog.slug} blog={blog} />
             ))}
           </div>
