@@ -4,6 +4,7 @@ import { Card } from '@/components/Card';
 import { SimpleLayout } from '@/layouts/SimpleLayout';
 import { getAllCodeSnippets } from '@/lib/getAllCodeSnippets';
 import { CodeSnippetModel } from '@/lib/types';
+import { InferGetStaticPropsType } from 'next';
 
 function SnippetCard({ snippet }: { snippet: CodeSnippetModel }) {
   return (
@@ -27,11 +28,9 @@ function SnippetCard({ snippet }: { snippet: CodeSnippetModel }) {
   );
 }
 
-export default function Snippets({
-  snippets
-}: {
-  snippets: CodeSnippetModel[];
-}) {
+export default function Snippets(
+  props: InferGetStaticPropsType<typeof getStaticProps>
+) {
   return (
     <>
       <Head>
@@ -49,7 +48,7 @@ export default function Snippets({
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {snippets.map((snippet) => (
+          {props.snippets.map((snippet) => (
             <SnippetCard key={snippet.slug} snippet={snippet} />
           ))}
         </ul>

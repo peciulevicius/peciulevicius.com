@@ -15,6 +15,7 @@ import { BlogPostModel } from '@/lib/types';
 import { Card } from '@/components/Card';
 import { formatDate } from '@/lib/formatDate';
 import { getAllBlogPosts } from '@/lib/getAllBlogPosts';
+import { InferGetStaticPropsType } from 'next';
 
 function BlogPostCard({ blog }: { blog: BlogPostModel }) {
   return (
@@ -79,7 +80,9 @@ function Photos(): JSX.Element {
   );
 }
 
-export default function Home({ blogPosts }: { blogPosts: BlogPostModel[] }) {
+export default function Home(
+  props: InferGetStaticPropsType<typeof getStaticProps>
+) {
   return (
     <>
       <Head>
@@ -127,7 +130,7 @@ export default function Home({ blogPosts }: { blogPosts: BlogPostModel[] }) {
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
-            {blogPosts.map((blog) => (
+            {props.blogPosts.map((blog: BlogPostModel) => (
               <BlogPostCard key={blog.slug} blog={blog} />
             ))}
           </div>
