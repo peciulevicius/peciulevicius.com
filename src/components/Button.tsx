@@ -30,9 +30,10 @@ export function Button({
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
   children: ReactNode;
+  onClick?: () => void;
 }) {
   className = clsx(
-    'inline-flex items-center border border-1 border-black dark:border-white font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
+    'inline-flex items-center border border-1 border-black dark:border-white font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black dark:focus:ring-white',
     variantStyles[variant],
     sizeStyles[size],
     className

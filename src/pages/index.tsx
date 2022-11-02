@@ -16,6 +16,7 @@ import { Card } from '@/components/Card';
 import { formatDate } from '@/lib/formatDate';
 import { getAllBlogPosts } from '@/lib/getAllBlogPosts';
 import { InferGetStaticPropsType } from 'next';
+import Hero from '@/components/Hero';
 
 function BlogPostCard({ blog }: { blog: BlogPostModel }) {
   return (
@@ -95,10 +96,11 @@ export default function Home(
           content="I’m Džiugas, a software engineer, designer, and aspiring pilot based in Vilnius City."
         />
       </Head>
+      <Hero />
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software engineer, designer, and aspiring pilot.
+            Designer, Frontend & Mobile Developer
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I’m Džiugas, a software engineer and designer based in Vilnius City.
@@ -125,7 +127,7 @@ export default function Home(
         </div>
       </Container>
 
-      <Photos />
+      {/*<Photos />*/}
 
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
