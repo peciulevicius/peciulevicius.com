@@ -189,7 +189,7 @@ export function HeroPatternRight(props: SVGProps<SVGSVGElement>) {
             y={0}
             width={4}
             height={4}
-            className="text-gray-200 dark:text-gray-900"
+            className="text-gray-200 dark:text-gray-800"
             fill="currentColor"
           />
         </pattern>
