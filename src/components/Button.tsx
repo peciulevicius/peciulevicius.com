@@ -33,7 +33,7 @@ export function Button({
   onClick?: () => void;
 }) {
   className = clsx(
-    'inline-flex items-center border border-1 border-black dark:border-white font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black dark:focus:ring-white',
+    'transition-all inline-flex duration-300 items-center border border-1 border-black dark:border-white font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black dark:focus:ring-white',
     variantStyles[variant],
     sizeStyles[size],
     className
