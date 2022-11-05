@@ -1,13 +1,7 @@
 import { HeroPatternLeft, HeroPatternRight } from '@/components/Icons';
 import { Header } from '@/components/Header';
-import { useEffect } from 'react';
-import { renderCanvas } from '@/components/renderCanvas';
 
 export default function Hero() {
-  useEffect(() => {
-    renderCanvas();
-  }, []);
-
   return (
     <>
       <div className="relative overflow-hidden bg-white dark:bg-black">
@@ -34,10 +28,6 @@ export default function Hero() {
           </main>
         </div>
       </div>
-      <canvas
-        className="bg-skin-base pointer-events-none absolute inset-0"
-        id="canvas"
-      ></canvas>
     </>
   );
 }
