@@ -1,4 +1,8 @@
-import { HeroPatternLeft, HeroPatternRight } from '@/components/Icons';
+import {
+  HeroIllustration,
+  HeroPatternLeft,
+  HeroPatternRight
+} from '@/components/Icons';
 import { Header } from '@/components/Header';
 
 export default function Hero() {
@@ -24,6 +28,7 @@ export default function Hero() {
                 I build new projects just to tickle my brain and I love creating
                 UI effects, animations and intuitive, dynamic user experiences.
               </p>
+              <HeroIllustration className={'mx-auto translate-y-16'} />
             </div>
           </main>
         </div>
