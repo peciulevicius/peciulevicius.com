@@ -4,7 +4,7 @@ import { Header } from '@/components/Header';
 export default function Hero() {
   return (
     <>
-      <div className="relative overflow-hidden bg-white dark:bg-black">
+      <div className="relative min-h-screen overflow-hidden bg-white dark:bg-black">
         <div aria-hidden="true">
           <HeroPatternLeft />
           <HeroPatternRight />
@@ -13,7 +13,7 @@ export default function Hero() {
         <div className="relative">
           <Header />
 
-          <main className="mx-auto mt-16 min-h-screen max-w-7xl px-4 sm:mt-24">
+          <main className="mx-auto mt-16 max-w-7xl px-4 sm:mt-24">
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
                 <span className="block text-black dark:text-white xl:inline">
