@@ -4,13 +4,22 @@ import { ReactNode } from 'react';
 
 const variantStyles = {
   primary:
-    'bg-zinc-800 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:active:text-zinc-100/70',
+    'bg-black dark:bg-white text-white dark:text-black hover:bg-white dark:hover:bg-black hover:text-black dark:hover:text-white',
   secondary:
-    'bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70'
+    'bg-white dark:bg-black text-black dark:text-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black'
+};
+
+const sizeStyles = {
+  xs: 'rounded px-2.5 py-1.5 text-xs',
+  sm: 'rounded-md px-3 py-2 text-sm leading-4',
+  md: 'rounded-md px-4 py-2 text-sm',
+  lg: 'rounded-md px-4 py-2 text-base',
+  xl: 'rounded-md px-6 py-3 text-base'
 };
 
 export function Button({
   variant = 'primary',
+  size = 'md',
   className,
   href,
   ...props
@@ -18,12 +27,15 @@ export function Button({
   type: 'button' | 'submit' | 'reset';
   href?: string;
   variant?: 'primary' | 'secondary';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
   children: ReactNode;
+  onClick?: () => void;
 }) {
   className = clsx(
-    'inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 active:transition-none',
+    'transition-all inline-flex duration-300 items-center border border-1 border-black dark:border-white font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black dark:focus:ring-white',
     variantStyles[variant],
+    sizeStyles[size],
     className
   );
 

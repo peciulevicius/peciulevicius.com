@@ -67,7 +67,7 @@ function Resume() {
         className="group mt-6 w-full"
       >
         Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition dark:group-hover:stroke-black" />
       </Button>
     </div>
   );
