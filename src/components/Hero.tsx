@@ -10,8 +10,8 @@ export default function Hero() {
     <>
       <div className="relative min-h-screen overflow-hidden bg-white dark:bg-black">
         <div aria-hidden="true">
-          <HeroPatternLeft />
-          <HeroPatternRight />
+          <HeroPatternLeft className="absolute right-full translate-y-1/4 translate-x-1/4 transform lg:translate-x-1/2" />
+          <HeroPatternRight className="absolute left-full -translate-y-3/4 -translate-x-1/4 transform md:-translate-y-1/2 lg:-translate-x-1/2" />
         </div>
 
         <div className="relative">

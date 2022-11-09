@@ -131,13 +131,7 @@ export function TwitterIcon(props: SVGProps<SVGSVGElement>) {
 
 export function HeroPatternLeft(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      className="absolute right-full translate-y-1/4 translate-x-1/4 transform lg:translate-x-1/2"
-      width={404}
-      height={784}
-      fill="none"
-      viewBox="0 0 404 784"
-    >
+    <svg width={404} height={784} fill="none" viewBox="0 0 404 784" {...props}>
       <defs>
         <pattern
           id="f210dbf6-a58d-4871-961e-36d5016a0f49"
@@ -168,13 +162,7 @@ export function HeroPatternLeft(props: SVGProps<SVGSVGElement>) {
 
 export function HeroPatternRight(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      className="absolute left-full -translate-y-3/4 -translate-x-1/4 transform md:-translate-y-1/2 lg:-translate-x-1/2"
-      width={404}
-      height={784}
-      fill="none"
-      viewBox="0 0 404 784"
-    >
+    <svg width={404} height={784} fill="none" viewBox="0 0 404 784" {...props}>
       <defs>
         <pattern
           id="5d0dd344-b041-4d26-bec4-8d33ea57ec9b"
