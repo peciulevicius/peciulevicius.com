@@ -1,4 +1,4 @@
-import { CSSProperties, useEffect, useState } from 'react';
+import { CSSProperties, useEffect, useRef, useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import logoWhite from '@/images/logos/light-bg-transparent.svg';
@@ -105,6 +105,8 @@ function ToggleTheme() {
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  let closeButtonRef = useRef(null);
+
   return (
     <>
       <div className="mx-auto max-w-7xl px-6 pt-6">
@@ -154,11 +156,13 @@ export function Header() {
             <ToggleTheme />
           </div>
         </nav>
-        <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-          <Dialog.Panel
-            focus="true"
-            className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden"
-          >
+        <Dialog
+          as="div"
+          initialFocus={closeButtonRef}
+          open={mobileMenuOpen}
+          onClose={setMobileMenuOpen}
+        >
+          <Dialog.Panel className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
             <div className="flex h-9 items-center justify-between">
               <div className="-m-1.5 flex p-1.5">
                 <span className="sr-only">Džiugas Pečiulevičius</span>
@@ -167,6 +171,7 @@ export function Header() {
               <div className="flex">
                 <button
                   type="button"
+                  ref={closeButtonRef}
                   className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
                   onClick={() => setMobileMenuOpen(false)}
                 >
