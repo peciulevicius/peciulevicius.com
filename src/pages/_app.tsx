@@ -1,6 +1,5 @@
 import type { AppProps } from 'next/app';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { ThemeProvider } from 'next-themes';
 
 import '@/styles/globals.css';
@@ -17,7 +16,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           <main>
             <Component {...pageProps} />
           </main>
-          <Footer />
         </div>
       </ThemeProvider>
     </>
