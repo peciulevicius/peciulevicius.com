@@ -30,7 +30,6 @@ export default function Hero() {
                 Live demo
               </Button>
             </div>
-            {/*<HeroIllustration className={'mx-auto translate-y-16'} />*/}
           </div>
         </div>
       </div>
