@@ -447,7 +447,7 @@ export function HeroIllustration(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export function HeroLinearGradientTop(props: SVGProps<SVGSVGElement>) {
+export function LinearGradientTopLight(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 1360 678"
@@ -478,7 +478,7 @@ export function HeroLinearGradientTop(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export function HeroLinearGradientBottom(props: SVGProps<SVGSVGElement>) {
+export function LinearGradientBottomLight(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 1155 678"

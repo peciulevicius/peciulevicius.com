@@ -105,6 +105,7 @@ function ToggleTheme() {
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
   let closeButtonRef = useRef(null);
 
   return (
@@ -125,7 +126,7 @@ export function Header() {
             {/*MOBILE HAMBURGER*/}
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-900 dark:text-slate-300"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
@@ -162,7 +163,7 @@ export function Header() {
           open={mobileMenuOpen}
           onClose={setMobileMenuOpen}
         >
-          <Dialog.Panel className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
+          <Dialog.Panel className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 dark:bg-[#0B1120] lg:hidden">
             <div className="flex h-9 items-center justify-between">
               <div className="-m-1.5 flex p-1.5">
                 <span className="sr-only">Džiugas Pečiulevičius</span>
@@ -172,7 +173,7 @@ export function Header() {
                 <button
                   type="button"
                   ref={closeButtonRef}
-                  className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                  className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-900 dark:text-slate-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="sr-only">Close menu</span>
@@ -181,13 +182,13 @@ export function Header() {
               </div>
             </div>
             <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="-my-6 divide-y divide-gray-500/10 dark:divide-gray-100/10">
                 <div className="space-y-2 py-6">
                   {navigation.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
+                      className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10 dark:text-slate-300"
                     >
                       {item.name}
                     </a>
@@ -196,9 +197,19 @@ export function Header() {
                 <div className="py-6">
                   <a
                     href="#"
-                    className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
+                    className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10 dark:text-slate-300"
                   >
-                    Log in
+                    Say hello
+                  </a>
+                  <a
+                    href="#"
+                    className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 focus:ring-black hover:bg-gray-400/10 dark:text-slate-300"
+                    onClick={() =>
+                      setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+                    }
+                  >
+                    Switch to {resolvedTheme === 'dark' ? 'light' : 'dark'}{' '}
+                    theme
                   </a>
                 </div>
               </div>
