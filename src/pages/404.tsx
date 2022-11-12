@@ -13,9 +13,9 @@ export default function Custom404() {
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
-        <div className="mx-auto max-w-max">
+        <div className="mx-auto max-w-max max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-4">
           <main className="sm:flex">
-            <p className="text-4xl font-bold tracking-tight text-amber-600 dark:text-amber-500 sm:text-5xl">
+            <p className="text-4xl font-bold tracking-tight text-sky-600 dark:text-sky-500 sm:text-5xl">
               404
             </p>
             <div className="sm:ml-6">

@@ -4,9 +4,9 @@ import { ReactNode } from 'react';
 
 const variantStyles = {
   primary:
-    'bg-black dark:bg-white text-white dark:text-black hover:bg-white dark:hover:bg-black hover:text-black dark:hover:text-white',
+    'bg-slate-900 hover:bg-slate-700 dark:bg-sky-500 dark:hover:bg-sky-400 text-white',
   secondary:
-    'bg-white dark:bg-black text-black dark:text-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black'
+    'text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20 bg-white dark:bg-slate-800 dark:text-white dark:hover:bg-slate-800'
 };
 
 const sizeStyles = {
@@ -33,7 +33,7 @@ export function Button({
   onClick?: () => void;
 }) {
   className = clsx(
-    'transition-all inline-flex duration-300 items-center border border-1 border-black dark:border-white font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black dark:focus:ring-white',
+    'transition-all inline-flex duration-300 items-center border-black font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black dark:focus:ring-white',
     variantStyles[variant],
     sizeStyles[size],
     className
