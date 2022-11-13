@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import { ThemeProvider } from 'next-themes';
 import '@/styles/globals.css';
 import { useRouter } from 'next/router';
+import UnderConstructionBanner from '@/components/UnderConstructionBanner';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
             <Analytics />
           </main>
+          <UnderConstructionBanner />
         </div>
       </ThemeProvider>
     </>
