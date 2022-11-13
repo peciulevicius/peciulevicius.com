@@ -41,8 +41,16 @@ export default function Hero() {
               </Button>
             </div>
 
-            <div className="absolute inset-x-[-50vw] -top-32 -bottom-48 -z-50 [mask-image:linear-gradient(transparent,white,white)] dark:[mask-image:linear-gradient(transparent,white,transparent)] lg:left-[calc(50%+14rem)] lg:right-0 lg:-top-32 lg:-bottom-32 lg:[mask-image:none] lg:dark:[mask-image:linear-gradient(white,white,transparent)]">
-              <VersionControlBackground className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 lg:-translate-y-[60%]" />
+            <div className="absolute inset-x-[-50vw] -top-32 -bottom-48 -z-50 [mask-image:linear-gradient(transparent,white,red)] dark:[mask-image:linear-gradient(transparent,white,transparent)] sm:left-[calc(50%+14rem)] sm:right-0 sm:-top-32 sm:-bottom-32 sm:[mask-image:none] sm:dark:[mask-image:linear-gradient(white,white,transparent)]">
+              {mounted && (
+                <VersionControlBackground
+                  color1={resolvedTheme === 'dark' ? '#FFF' : '#FFF'}
+                  color2={resolvedTheme === 'dark' ? '#334155' : '#d5d5d5'}
+                  color3={resolvedTheme === 'dark' ? '#1E293B' : '#F5F5F5'}
+                  color4={resolvedTheme === 'dark' ? '#0EA5E9' : '#F472B6'}
+                  className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 lg:-translate-y-[60%]"
+                />
+              )}
             </div>
           </div>
         </div>
