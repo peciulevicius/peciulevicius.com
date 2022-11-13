@@ -41,7 +41,7 @@ export default function Hero() {
               </Button>
             </div>
 
-            <div className="absolute inset-x-[-50vw] -top-32 -bottom-48 -z-50 [mask-image:linear-gradient(transparent,white,red)] dark:[mask-image:linear-gradient(transparent,white,transparent)] sm:left-[calc(50%+14rem)] sm:right-0 sm:-top-32 sm:-bottom-32 sm:[mask-image:none] sm:dark:[mask-image:linear-gradient(white,white,transparent)]">
+            <div className="absolute inset-x-[-50vw] -top-32 -bottom-48 -z-50 [mask-image:linear-gradient(transparent,white,transparent)] dark:[mask-image:linear-gradient(transparent,white,transparent)] sm:left-[calc(50%+14rem)] sm:right-0 sm:-top-32 sm:-bottom-32 sm:[mask-image:none] sm:dark:[mask-image:linear-gradient(transparent,white,transparent)]">
               {mounted && (
                 <VersionControlBackground
                   color1={resolvedTheme === 'dark' ? '#FFF' : '#FFF'}

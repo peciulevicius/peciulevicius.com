@@ -44,7 +44,6 @@ export default function Home() {
       </div>
 
       <Hero />
-      <section className={'h-screen'}></section>
     </>
   );
 }
