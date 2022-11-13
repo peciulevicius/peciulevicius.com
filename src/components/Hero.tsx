@@ -1,7 +1,17 @@
-import { Button } from '@/components/Button';
 import { Header } from '@/components/Header';
+import { useEffect, useState } from 'react';
+import { VersionControlBackground } from '@/components/Illustrations';
+import { useTheme } from 'next-themes';
+import { Button } from '@/components/Button';
 
 export default function Hero() {
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div className="isolate min-h-screen">
       <Header />
@@ -12,15 +22,15 @@ export default function Hero() {
             <h1 className="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
               Designer, Frontend & Mobile Developer
             </h1>
-            <p className="mt-6 text-lg leading-8 text-slate-500 dark:text-slate-400 sm:text-center">
+            <p className="mt-6 pb-6 text-lg leading-8 text-slate-500 dark:text-slate-400 sm:text-center">
               I build new projects just to tickle my brain and I love creating
               UI effects, animations and intuitive, dynamic user experiences.
             </p>
+
             <div className="mt-8 flex gap-x-4 sm:justify-center">
               <Button type={'button'} size={'lg'} href={'#'}>
                 Get started
               </Button>
-
               <Button
                 type={'button'}
                 size={'lg'}
@@ -29,6 +39,10 @@ export default function Hero() {
               >
                 Live demo
               </Button>
+            </div>
+
+            <div className="absolute inset-x-[-50vw] -top-32 -bottom-48 -z-50 [mask-image:linear-gradient(transparent,white,white)] dark:[mask-image:linear-gradient(transparent,white,transparent)] lg:left-[calc(50%+14rem)] lg:right-0 lg:-top-32 lg:-bottom-32 lg:[mask-image:none] lg:dark:[mask-image:linear-gradient(white,white,transparent)]">
+              <VersionControlBackground className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 lg:-translate-y-[60%]" />
             </div>
           </div>
         </div>
