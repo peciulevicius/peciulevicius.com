@@ -29,7 +29,7 @@ export default function Hero() {
 
             <div className="mt-8 flex gap-x-4 sm:justify-center">
               <Button type={'button'} size={'lg'} href={'#'}>
-                Get started
+                Primary
               </Button>
               <Button
                 type={'button'}
@@ -37,7 +37,7 @@ export default function Hero() {
                 href={'#'}
                 variant={'secondary'}
               >
-                Live demo
+                Secondary
               </Button>
             </div>
 
