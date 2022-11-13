@@ -1,6 +1,9 @@
 import Head from 'next/head';
 import Hero from '@/components/Hero';
-import { LinearGradientBottom, LinearGradientTop } from '@/components/Icons';
+import {
+  LinearGradientBottom,
+  LinearGradientTop
+} from '@/components/Illustrations';
 
 export default function Home() {
   return (
