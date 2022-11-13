@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ThemeProvider attribute="class">
-        <div className="relative">
+        <div className="relative overflow-hidden">
           {router.pathname !== '/' && <Header />}
           <main>
             <Component {...pageProps} />
