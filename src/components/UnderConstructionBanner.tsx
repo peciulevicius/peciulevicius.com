@@ -25,7 +25,7 @@ export default function UnderConstructionBanner() {
                 <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-2">
                   <button
                     type="button"
-                    className="-mr-1 flex rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-white hover:bg-indigo-500"
+                    className="-mr-1 flex rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-white hover:bg-slate-700 dark:hover:bg-sky-600"
                     onClick={() => setIsOpen(false)}
                   >
                     <span className="sr-only">Dismiss</span>
