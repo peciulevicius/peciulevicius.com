@@ -6,10 +6,10 @@ export default function Custom404() {
   return (
     <>
       <Head>
-        <title>404: This page could not be found - Džiugas Pečiulevičius</title>
+        <title>Džiugas Pečiulevičius | 404 Not Found</title>
         <meta
           name="description"
-          content="404: Content that you're looking for is not found..."
+          content="Džiugas Pečiulevičius | 404 Not Found"
         />
       </Head>
       <Container className="mt-16 sm:mt-32">

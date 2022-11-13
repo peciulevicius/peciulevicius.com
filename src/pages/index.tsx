@@ -18,12 +18,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>
-          Džiugas Pečiulevičius - Designer, Frontend & Mobile Developer
-        </title>
+        <title>Džiugas Pečiulevičius | Designer & Developer</title>
         <meta
           name="description"
-          content="I’m Džiugas, a designer, frontend and mobile developer."
+          content="Džiugas Pečiulevičius | Designer & Developer"
         />
       </Head>
       <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
