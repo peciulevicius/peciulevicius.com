@@ -10,11 +10,12 @@ import Link from 'next/link';
 import clsx from 'clsx';
 
 const navigation = [
-  { name: 'Projects', href: '#' },
-  { name: 'Services', href: '#' },
-  { name: 'Tools', href: '#' },
-  { name: 'Contact', href: '#' }
+  { number: 1, name: 'Projects', href: '#' },
+  { number: 2, name: 'Services', href: '#' },
+  { number: 3, name: 'Tools', href: '#' },
+  { number: 4, name: 'Contact', href: '#' }
 ];
+
 function Logo({
   large = false,
   className,
@@ -126,7 +127,7 @@ export function Header() {
             {/*MOBILE HAMBURGER*/}
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-900 dark:text-slate-300"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 dark:text-slate-300 dark:focus:ring-white"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
@@ -138,8 +139,13 @@ export function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="font-semibold text-gray-900 dark:text-slate-300"
+                className="flex font-semibold text-gray-900 dark:text-slate-300"
               >
+                <span
+                  className={'pr-2 font-bold text-sky-600 dark:text-sky-500'}
+                >
+                  0{item.number}.
+                </span>
                 {item.name}
               </a>
             ))}
@@ -157,6 +163,8 @@ export function Header() {
             <ToggleTheme />
           </div>
         </nav>
+
+        {/*MOBILE DIALOG*/}
         <Dialog
           as="div"
           initialFocus={closeButtonRef}
@@ -190,6 +198,13 @@ export function Header() {
                       href={item.href}
                       className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10 dark:text-slate-300"
                     >
+                      <span
+                        className={
+                          'pr-2 font-bold text-sky-600 dark:text-sky-500'
+                        }
+                      >
+                        0{item.number}.
+                      </span>
                       {item.name}
                     </a>
                   ))}
