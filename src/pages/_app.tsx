@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ThemeProvider attribute="class">
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden selection:bg-pink-200 selection:text-pink-900 dark:selection:bg-sky-300 dark:selection:text-sky-900">
           {router.pathname !== '/' && <Header />}
           <main>
             <Component {...pageProps} />
