@@ -12,35 +12,35 @@
     "defaults, not ie <= 11"
   ],
   "dependencies": {
-    "@headlessui/react": "^1.7.3",
-    "@heroicons/react": "^2.0.12",
+    "@headlessui/react": "^1.7.4",
+    "@heroicons/react": "^2.0.13",
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/loader": "^2.1.5",
-    "@next/mdx": "^13.0.1",
-    "@tailwindcss/typography": "^0.5.7",
+    "@next/mdx": "^13.0.4",
+    "@tailwindcss/typography": "^0.5.8",
     "@vercel/analytics": "^0.1.4",
     "autoprefixer": "^10.4.13",
     "clsx": "^1.2.0",
     "fast-glob": "^3.2.12",
     "feed": "^4.2.2",
     "focus-visible": "^5.2.0",
-    "next": "^13.0.1",
+    "next": "^13.0.4",
     "next-themes": "^0.2.1",
     "postcss-focus-visible": "^7.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remark-gfm": "^3.0.1",
     "tailwind-scrollbar": "^2.0.1",
-    "tailwindcss": "^3.2.1"
+    "tailwindcss": "^3.2.4"
   },
   "devDependencies": {
     "@types/node": "18.11.9",
-    "@types/react": "18.0.24",
-    "@types/react-dom": "18.0.8",
-    "eslint": "^8.26.0",
-    "eslint-config-next": "^13.0.1",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "eslint": "^8.27.0",
+    "eslint-config-next": "^13.0.4",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
-    "typescript": "4.8.4"
+    "typescript": "4.9.3"
   }
 }
