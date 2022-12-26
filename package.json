@@ -15,7 +15,7 @@
     "@headlessui/react": "^1.7.4",
     "@heroicons/react": "^2.0.13",
     "@mapbox/rehype-prism": "^0.8.0",
-    "@mdx-js/loader": "^2.1.5",
+    "@mdx-js/loader": "^2.2.1",
     "@next/mdx": "^13.0.7",
     "@tailwindcss/typography": "^0.5.8",
     "@vercel/analytics": "^0.1.6",
