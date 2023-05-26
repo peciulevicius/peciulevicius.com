@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
             <Analytics />
           </main>
-          <UnderConstructionBanner />
+          {/*<UnderConstructionBanner />*/}
         </div>
       </ThemeProvider>
     </>
