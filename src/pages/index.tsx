@@ -6,6 +6,7 @@ import {
 } from '@/components/Illustrations';
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
+import HeroTest from '@/components/HeroTest';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
