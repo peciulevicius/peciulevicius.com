@@ -1,0 +1,307 @@
+Index: src/layouts/BlogPostLayout.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Head from 'next/head';\n\nimport { Container } from '@/components/Container';\nimport { formatDate } from '@/lib/formatDate';\nimport { Prose } from '@/components/Prose';\n\n// todo: fix 'any' type\nexport function BlogPostLayout({ children, meta, isRssFeed = false }: any) {\n  if (isRssFeed) {\n    return children;\n  }\n\n  return (\n    <>\n      <Head>\n        <title>{`${meta.title} - Džiugas Pečiulevičius`}</title>\n        <meta name=\"description\" content={meta.description} />\n      </Head>\n      <Container className=\"mt-16 lg:mt-32\">\n        <div className=\"xl:relative\">\n          <div className=\"mx-auto max-w-2xl\">\n            <article>\n              <header className=\"flex flex-col\">\n                <h1 className=\"mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl\">\n                  {meta.title}\n                </h1>\n                <time\n                  dateTime={meta.date}\n                  className=\"order-first flex items-center text-base text-zinc-400 dark:text-zinc-500\"\n                >\n                  <span className=\"h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500\" />\n                  <span className=\"ml-3\">{formatDate(meta.date)}</span>\n                </time>\n              </header>\n              <Prose className=\"mt-8\">{children}</Prose>\n            </article>\n          </div>\n        </div>\n      </Container>\n    </>\n  );\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/layouts/BlogPostLayout.tsx b/src/layouts/BlogPostLayout.tsx
+--- a/src/layouts/BlogPostLayout.tsx	(revision 0a00fd930846c574295adf56509c00b4310377bc)
++++ b/src/layouts/BlogPostLayout.tsx	(date 1665423279860)
+@@ -1,5 +1,4 @@
+ import Head from 'next/head';
+-
+ import { Container } from '@/components/Container';
+ import { formatDate } from '@/lib/formatDate';
+ import { Prose } from '@/components/Prose';
+Index: src/lib/types.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { ReactElement } from 'react';\n\nexport type ContainerProps = {\n  className?: string;\n  children: ReactElement | ReactElement[];\n};\n\nexport type BlogPostModel = {\n  slug: string;\n  title: string;\n  date: string;\n  description: string;\n};\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/lib/types.ts b/src/lib/types.ts
+--- a/src/lib/types.ts	(revision 0a00fd930846c574295adf56509c00b4310377bc)
++++ b/src/lib/types.ts	(date 1665425314503)
+@@ -11,3 +11,10 @@
+   date: string;
+   description: string;
+ };
++
++export type CodeSnippetModel = {
++  slug: string;
++  title: string;
++  description: string;
++  logo: string;
++};
+Index: src/pages/snippets/index.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Image from 'next/future/image';\nimport Head from 'next/head';\n\nimport { Card } from '@/components/Card';\nimport { SimpleLayout } from '@/layouts/SimpleLayout';\nimport logoVisma from '@/images/logos/visma.svg';\n\nconst snippets = [\n  {\n    name: 'Snippet 1',\n    description:\n      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',\n    logo: logoVisma\n  },\n  {\n    name: 'Snippet 2',\n    description:\n      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',\n    logo: logoVisma\n  },\n  {\n    name: 'Snippet 3',\n    description:\n      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',\n    logo: logoVisma\n  },\n  {\n    name: 'Snippet 4',\n    description:\n      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',\n    logo: logoVisma\n  },\n  {\n    name: 'Snippet 5',\n    description:\n      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',\n    logo: logoVisma\n  }\n];\n\nexport default function Snippets() {\n  return (\n    <>\n      <Head>\n        <title>Code Snippets - Džiugas Pečiulevičius</title>\n        <meta\n          name=\"description\"\n          content=\"These are a collection of code snippets I've used in the past and saved.\"\n        />\n      </Head>\n      <SimpleLayout\n        title=\"Code Snippets\"\n        intro=\"These are a collection of code snippets I've used in the past and saved. Anything from random CSS snippets to Node.js scripts.\"\n      >\n        <ul\n          role=\"list\"\n          className=\"grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3\"\n        >\n          {snippets.map((snippet) => (\n            <Card as=\"li\" key={snippet.name}>\n              <div className=\"relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0\">\n                <Image\n                  src={snippet.logo}\n                  alt=\"\"\n                  className=\"h-8 w-8\"\n                  unoptimized\n                />\n              </div>\n              <h2 className=\"mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100\">\n                <Card.Link href={snippet.name}>{snippet.name}</Card.Link>\n              </h2>\n              <Card.Description>{snippet.description}</Card.Description>\n            </Card>\n          ))}\n        </ul>\n      </SimpleLayout>\n    </>\n  );\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/pages/snippets/index.tsx b/src/pages/snippets/index.tsx
+--- a/src/pages/snippets/index.tsx	(revision 0a00fd930846c574295adf56509c00b4310377bc)
++++ b/src/pages/snippets/index.tsx	(date 1665427607301)
+@@ -1,44 +1,36 @@
+ import Image from 'next/future/image';
+ import Head from 'next/head';
+-
+ import { Card } from '@/components/Card';
+ import { SimpleLayout } from '@/layouts/SimpleLayout';
+ import logoVisma from '@/images/logos/visma.svg';
++import { getAllCodeSnippets } from '@/lib/getAllCodeSnippets';
++import { CodeSnippetModel } from '@/lib/types';
+ 
+-const snippets = [
+-  {
+-    name: 'Snippet 1',
+-    description:
+-      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+-    logo: logoVisma
+-  },
+-  {
+-    name: 'Snippet 2',
+-    description:
+-      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+-    logo: logoVisma
+-  },
+-  {
+-    name: 'Snippet 3',
+-    description:
+-      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+-    logo: logoVisma
+-  },
+-  {
+-    name: 'Snippet 4',
+-    description:
+-      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+-    logo: logoVisma
+-  },
+-  {
+-    name: 'Snippet 5',
+-    description:
+-      'lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+-    logo: logoVisma
+-  }
+-];
+-
+-export default function Snippets() {
++function SnippetCard({ snippet }: { snippet: CodeSnippetModel }) {
++  return (
++    <Card as="li">
++      <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
++        <Image
++          src={snippet.logo}
++          alt=""
++          className="h-8 w-8"
++          width={200}
++          height={200}
++        />
++      </div>
++      <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
++        <Card.Link href={`/snippet/${snippet.slug}`}>{snippet.title}</Card.Link>
++      </h2>
++      <Card.Description>{snippet.description}</Card.Description>
++    </Card>
++  );
++}
++
++export default function Snippets({
++  snippets
++}: {
++  snippets: CodeSnippetModel[];
++}) {
+   return (
+     <>
+       <Head>
+@@ -57,23 +49,21 @@
+           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+         >
+           {snippets.map((snippet) => (
+-            <Card as="li" key={snippet.name}>
+-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+-                <Image
+-                  src={snippet.logo}
+-                  alt=""
+-                  className="h-8 w-8"
+-                  unoptimized
+-                />
+-              </div>
+-              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+-                <Card.Link href={snippet.name}>{snippet.name}</Card.Link>
+-              </h2>
+-              <Card.Description>{snippet.description}</Card.Description>
+-            </Card>
++            // <div key={snippet.slug}>{snippet.logo}</div>
++            <SnippetCard key={snippet.slug} snippet={snippet} />
+           ))}
+         </ul>
+       </SimpleLayout>
+     </>
+   );
+ }
++
++export async function getStaticProps() {
++  return {
++    props: {
++      snippets: (await getAllCodeSnippets()).map(
++        ({ component, ...meta }) => meta
++      )
++    }
++  };
++}
+Index: src/layouts/CodeSnippetsLayout.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// todo: fix 'any' type\nimport Head from 'next/head';\nimport { Container } from '@/components/Container';\nimport { Prose } from '@/components/Prose';\n\nexport function CodeSnippetsLayout({ children, meta, isRssFeed = false }: any) {\n  if (isRssFeed) {\n    return children;\n  }\n\n  return (\n    <>\n      <Head>\n        <title>{`${meta.title} - Džiugas Pečiulevičius`}</title>\n        <meta name=\"description\" content={meta.description} />\n      </Head>\n      <Container className=\"mt-16 lg:mt-32\">\n        <div className=\"xl:relative\">\n          <div className=\"mx-auto max-w-2xl\">\n            <article>\n              <header className=\"flex flex-col\">\n                <h1 className=\"mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl\">\n                  {meta.title}\n                </h1>\n              </header>\n              <Prose className=\"mt-8\">{children}</Prose>\n            </article>\n          </div>\n        </div>\n      </Container>\n    </>\n  );\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/layouts/CodeSnippetsLayout.tsx b/src/layouts/CodeSnippetsLayout.tsx
+--- a/src/layouts/CodeSnippetsLayout.tsx	(revision 0a00fd930846c574295adf56509c00b4310377bc)
++++ b/src/layouts/CodeSnippetsLayout.tsx	(date 1665424158161)
+@@ -1,8 +1,9 @@
+-// todo: fix 'any' type
+ import Head from 'next/head';
++import Image from 'next/future/image';
+ import { Container } from '@/components/Container';
+ import { Prose } from '@/components/Prose';
+ 
++// todo: fix 'any' type
+ export function CodeSnippetsLayout({ children, meta, isRssFeed = false }: any) {
+   if (isRssFeed) {
+     return children;
+@@ -14,19 +15,30 @@
+         <title>{`${meta.title} - Džiugas Pečiulevičius`}</title>
+         <meta name="description" content={meta.description} />
+       </Head>
++
+       <Container className="mt-16 lg:mt-32">
+-        <div className="xl:relative">
+-          <div className="mx-auto max-w-2xl">
+-            <article>
+-              <header className="flex flex-col">
+-                <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+-                  {meta.title}
+-                </h1>
+-              </header>
+-              <Prose className="mt-8">{children}</Prose>
+-            </article>
+-          </div>
+-        </div>
++        <article className="mx-auto mb-16 flex w-full max-w-2xl flex-col items-start justify-center">
++          <div className="mb-8 flex w-full justify-between">
++            <div>
++              <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
++                {meta.title}
++              </h1>
++              <p className="text-gray-700 dark:text-gray-300">
++                {meta.description}
++              </p>
++            </div>
++            <div className="mt-2 sm:mt-0">
++              <Image
++                alt="title"
++                height={48}
++                width={48}
++                src={meta.logo}
++                className="rounded-full"
++              />
++            </div>
++          </div>
++          <Prose className="mt-8">{children}</Prose>
++        </article>
+       </Container>
+     </>
+   );
+Index: src/pages/snippets/snippet-test/index.mdx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/pages/snippets/snippet-test/index.mdx b/src/pages/snippets/snippet-test/index.mdx
+new file mode 100644
+--- /dev/null	(date 1665427534858)
++++ b/src/pages/snippets/snippet-test/index.mdx	(date 1665427534858)
+@@ -0,0 +1,15 @@
++import { CodeSnippetsLayout } from '@/layouts/CodeSnippetsLayout';
++import Image from 'next/future/image';
++import vismaLogo from '../../../images/logos/visma.svg';
++
++export const meta = {
++  author: 'Džiugas Pečiulevičius',
++  title: 'Local images for blog test2',
++  description:
++    'Test blog description goes here. This blog is about testing nesting and local images.',
++  logo: vismaLogo
++};
++
++export default (props) => <CodeSnippetsLayout meta={meta} {...props} />;
++
++test
+Index: src/lib/getAllCodeSnippets.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/lib/getAllCodeSnippets.ts b/src/lib/getAllCodeSnippets.ts
+new file mode 100644
+--- /dev/null	(date 1665425385180)
++++ b/src/lib/getAllCodeSnippets.ts	(date 1665425385180)
+@@ -0,0 +1,22 @@
++import glob from 'fast-glob';
++import * as path from 'path';
++
++async function importCodeSnippet(snippetFilename: string) {
++  let { meta, default: component } = await import(
++    `../pages/snippets/${snippetFilename}`
++  );
++
++  return {
++    slug: snippetFilename.replace(/(\/index)?\.mdx$/, ''),
++    ...meta,
++    component
++  };
++}
++
++export async function getAllCodeSnippets() {
++  let codeSnippetFilenames = await glob(['*.mdx', '*/index.mdx'], {
++    cwd: path.join(process.cwd(), 'src/pages/snippets')
++  });
++
++  return await Promise.all(codeSnippetFilenames.map(importCodeSnippet));
++}
+Index: src/pages/snippets/snippet-test2/index.mdx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/pages/snippets/snippet-test2/index.mdx b/src/pages/snippets/snippet-test2/index.mdx
+new file mode 100644
+--- /dev/null	(date 1665427520943)
++++ b/src/pages/snippets/snippet-test2/index.mdx	(date 1665427520943)
+@@ -0,0 +1,21 @@
++import { CodeSnippetsLayout } from '@/layouts/CodeSnippetsLayout';
++import Image from 'next/future/image';
++import vismaLogo from '../../../images/logos/visma.svg';
++
++export const meta = {
++  author: 'Džiugas Pečiulevičius',
++  title: 'Local images for blog test',
++  description:
++    'Test blog description goes here. This blog is about testing nesting and local images.',
++  logo: vismaLogo
++};
++
++export default (props) => <CodeSnippetsLayout meta={meta} {...props} />;
++
++## Sermone fata
++
++Lorem markdownum, bracchia in redibam! Terque unda puppi nec, linguae posterior
++in utraque respicere candidus Mimasque formae; quae conantem cervice. Parcite
++variatus, redolentia adeunt. Tyrioque dies, naufraga sua adit partibus celanda
++torquere temptata, erit maneat et ramos, [iam](#) ait dominari
++potitus! Tibi litora matremque fumantia condi radicibus opusque.

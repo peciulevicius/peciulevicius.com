@@ -1,0 +1,359 @@
+Index: src/pages/blog/introducing-animaginary2.mdx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { BlogPostLayout } from '@/layouts/BlogPostLayout';\n\nexport const meta = {\n  author: 'Adam Wathan2',\n  date: '2022-09-03',\n  title: 'Introducing Animaginary2: High performance web animations',\n  description:\n    'When you’re building a website for a company as ambitious as Planetaria2, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.'\n};\n\nexport default (props) => <BlogPostLayout meta={meta} {...props} />;\n\nWhen you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.\n\nTo make this possible, we needed to squeeze every drop of performance out of the browser possible. And so Animaginary was born.\n\n| Syntax    | Description | Value |\n| --------- | ----------- | ----- |\n| Header    | Title       | test1 |\n| Paragraph | Text        | test2 |\n\n<hr />\n\n- test1 bullet\n- test2 bullet\n\n1. test1 numbered\n2. test2 numbered\n\n```js\nimport { animate } from '@planetaria/animaginary';\n\nexport function MyComponent({ open, children }) {\n  return (\n    <animate.div\n      in={open}\n      animateFrom=\"opacity-0 scale-95\"\n      animateTo=\"opacity-100 scale-100\"\n      duration={350}\n    >\n      {children}\n    </animate.div>\n  );\n}\n```\n\nAnimaginary is our new web animation library that redefines what you thought was possible on the web. Hand-written in optimized WASM, Animaginary can even animate the `height` property of an element at 60fps.\n\n## Sermone fata\n\nLorem markdownum, bracchia in redibam! Terque unda puppi nec, linguae posterior\nin utraque respicere candidus Mimasque formae; quae conantem cervice. Parcite\nvariatus, redolentia adeunt. Tyrioque dies, naufraga sua adit partibus celanda\ntorquere temptata, erit maneat et ramos, [iam](#) ait dominari\npotitus! Tibi litora matremque fumantia condi radicibus opusque.\n\nDeus feram verumque, fecit, ira tamen, terras per alienae victum. Mutantur\nlevitate quas ubi arcum ripas oculos abest. Adest [commissaque\nvictae](#) in gemitus nectareis ire diva\ndotibus ora, et findi huic invenit; fatis? Fractaque dare superinposita\nnimiumque simulatoremque sanguine, at voce aestibus diu! Quid veterum hausit tu\nnil utinam paternos ima, commentaque.\n\n```c\nexbibyte_wins = gigahertz(3);\ngrayscaleUtilityClient = control_uat;\npcmciaHibernate = oop_virus_console(text_mountain);\nif (stateWaisFirewire >= -2) {\n    jfs = 647065 / ldapVrml(tutorialRestore, 85);\n    metal_runtime_parse = roomComputingResolution - toolbarUpload +\n            ipx_nvram_open;\n} else {\n    maximizeSidebar *= suffix_url(flatbed + 2, requirements_encoding_node +\n            only_qbe_media, minicomputer);\n}\n```\n\nAere repetiti cognataque natus. Habebat vela solutis saepe munus nondum adhuc\noscula nomina pignora corpus deserat.\n\n## Lethaei Pindumve me quae dinumerat Pavor\n\nIdem se saxa fata pollentibus geminos; quos pedibus. Est urnis Herses omnes nec\ndivite: et ille illa furit sim verbis Cyllenius.\n\n1. Captus inpleverunt collo\n2. Nec nam placebant\n3. Siquos vulgus\n4. Dictis carissime fugae\n5. A tacitos nulla viginti\n\nUngues fistula annoso, ille addit linoque motatque uberior verso\n[rubuerunt](#) confine desuetaque. _Sanguine_ anteit\nemerguntque expugnacior est pennas iniqui ecce **haeret** genus: peiora imagine\nfossas Cephisos formosa! Refugitque amata [refelli](#)\nsupplex. Summa brevis vetuere tenebas, hostes vetantis, suppressit, arreptum\nregna. Postquam conpescit iuvenis habet corpus, et erratica, perdere, tot mota\nars talis.\n\n```c\ndigital.webcam_dual_frequency = webmasterMms;\nif (5 + language_standalone_google) {\n    cc_inbox_layout *= file_character;\n    task += p;\n    lockUnicode += enterprise_monochrome(tokenFunctionPersonal, keyVirtual,\n            adf);\n}\nwindows_binary_esports(87734, array(restoreRomTopology, adRaw(407314),\n        dongleBashThumbnail), interpreter);\n```\n\nSit volat naturam; motu Cancri. Erat pro simul quae valuit quoque timorem quam\nproelia: illo patrio _esse summus_, enim sua serpentibus, Hyleusque. Est coniuge\nrecuso; refert Coroniden ignotos manat, adfectu.\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/pages/blog/introducing-animaginary2.mdx b/src/pages/blog/introducing-animaginary2.mdx
+--- a/src/pages/blog/introducing-animaginary2.mdx	(revision 1858eb67ecd60020e184d05a1d63096892cf1e0b)
++++ b/src/pages/blog/introducing-animaginary2.mdx	(date 1664385225908)
+@@ -27,6 +27,10 @@
+ 1. test1 numbered
+ 2. test2 numbered
+ 
++```html
++<div class="test">test</div>
++```
++
+ ```js
+ import { animate } from '@planetaria/animaginary';
+ 
+@@ -44,6 +48,33 @@
+ }
+ ```
+ 
++```css
++.code-highlight {
++  @apply float-left min-w-full;
++}
++
++.code-line {
++  @apply -mx-4 block border-l-4 border-opacity-0 pl-4 pr-4;
++}
++
++.code-line.inserted {
++  @apply bg-green-500 bg-opacity-20;
++}
++
++.code-line.deleted {
++  @apply bg-red-500 bg-opacity-20;
++}
++
++.highlight-line {
++  @apply -mx-4 border-l-4 border-primary-500 bg-gray-700 bg-opacity-50;
++}
++
++.line-number::before {
++  @apply mr-4 -ml-2 inline-block w-4 text-right text-gray-400;
++  content: attr(line);
++}
++```
++
+ Animaginary is our new web animation library that redefines what you thought was possible on the web. Hand-written in optimized WASM, Animaginary can even animate the `height` property of an element at 60fps.
+ 
+ ## Sermone fata
+Index: src/styles/globals.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@tailwind base;\n@tailwind components;\n@tailwind utilities;\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/styles/globals.css b/src/styles/globals.css
+--- a/src/styles/globals.css	(revision 1858eb67ecd60020e184d05a1d63096892cf1e0b)
++++ b/src/styles/globals.css	(date 1664383667385)
+@@ -1,3 +1,174 @@
++@import './prism.css';
++
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
++
++
++.prose .anchor {
++    @apply absolute invisible no-underline;
++
++    margin-left: -1em;
++    padding-right: 0.5em;
++    width: 80%;
++    max-width: 700px;
++    cursor: pointer;
++}
++
++.anchor:hover {
++    @apply visible;
++}
++
++.prose a {
++    @apply transition-all;
++}
++
++.prose .anchor:after {
++    @apply text-gray-300 dark:text-gray-700;
++    content: '#';
++}
++
++.prose *:hover > .anchor {
++    @apply visible;
++}
++
++.prose pre {
++    @apply border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900;
++}
++
++.prose code {
++    @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-lg bg-gray-100 dark:bg-gray-900;
++}
++
++.prose pre code {
++    @apply text-gray-800 dark:text-gray-200 p-0;
++    border: initial;
++}
++
++.prose img {
++    /* Don't apply styles to next/image */
++    @apply m-0;
++}
++
++.prose > :first-child {
++    /* Override removing top margin, causing layout shift */
++    margin-top: 1.25em !important;
++    margin-bottom: 1.25em !important;
++}
++
++.token.comment,
++.token.prolog,
++.token.doctype,
++.token.cdata {
++    @apply text-gray-700 dark:text-gray-300;
++}
++
++.token.punctuation {
++    @apply text-gray-700 dark:text-gray-300;
++}
++
++.token.property,
++.token.tag,
++.token.boolean,
++.token.number,
++.token.constant,
++.token.symbol,
++.token.deleted {
++    @apply text-green-500;
++}
++
++.token.selector,
++.token.attr-name,
++.token.string,
++.token.char,
++.token.builtin,
++.token.inserted {
++    @apply text-purple-500;
++}
++
++.token.operator,
++.token.entity,
++.token.url,
++.language-css .token.string,
++.style .token.string {
++    @apply text-yellow-500;
++}
++
++.token.atrule,
++.token.attr-value,
++.token.keyword {
++    @apply text-blue-500;
++}
++
++.token.function,
++.token.class-name {
++    @apply text-pink-500;
++}
++
++.token.regex,
++.token.important,
++.token.variable {
++    @apply text-yellow-500;
++}
++
++code[class*='language-'],
++pre[class*='language-'] {
++    @apply text-gray-800 dark:text-gray-50;
++}
++
++pre::-webkit-scrollbar {
++    display: none;
++}
++
++pre {
++    -ms-overflow-style: none; /* IE and Edge */
++    scrollbar-width: none; /* Firefox */
++}
++
++.rehype-code-title {
++    @apply px-5 py-3 font-mono text-sm font-bold text-gray-800 bg-gray-200 border border-b-0 border-gray-200 rounded-t-lg dark:text-gray-200 dark:border-gray-700 dark:bg-gray-800;
++}
++
++.rehype-code-title + pre {
++    @apply mt-0 rounded-t-none;
++}
++
++.highlight-line {
++    @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-blue-500 dark:bg-gray-800;
++}
++
++/* Remove Safari input shadow on mobile */
++input[type='text'],
++input[type='email'] {
++    -webkit-appearance: none;
++    -moz-appearance: none;
++    appearance: none;
++}
++
++.metric-card > a {
++    @apply no-underline;
++}
++
++.metric-card > p {
++    @apply my-2;
++}
++
++.step > h3 {
++    @apply my-0;
++}
++
++.prose .tweet a {
++    text-decoration: inherit;
++    font-weight: inherit;
++}
++
++table {
++    display: block;
++    max-width: fit-content;
++    overflow-x: auto;
++    white-space: nowrap;
++}
++
++.prose .callout > p {
++    margin: 0 !important;
++}
+Index: src/styles/prism.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/styles/prism.css b/src/styles/prism.css
+new file mode 100644
+--- /dev/null	(date 1664382986470)
++++ b/src/styles/prism.css	(date 1664382986470)
+@@ -0,0 +1,109 @@
++/*pre[class*='language-'] {*/
++/*  color: theme('colors.slate.50');*/
++/*}*/
++
++/*.token.tag,*/
++/*.token.class-name,*/
++/*.token.selector,*/
++/*.token.selector .class,*/
++/*.token.selector.class,*/
++/*.token.function {*/
++/*  color: theme('colors.pink.400');*/
++/*}*/
++
++/*.token.attr-name,*/
++/*.token.keyword,*/
++/*.token.rule,*/
++/*.token.pseudo-class,*/
++/*.token.important {*/
++/*  color: theme('colors.slate.300');*/
++/*}*/
++
++/*.token.module {*/
++/*  color: theme('colors.pink.400');*/
++/*}*/
++
++/*.token.attr-value,*/
++/*.token.class,*/
++/*.token.string,*/
++/*.token.property {*/
++/*  color: theme('colors.sky.300');*/
++/*}*/
++
++/*.token.punctuation,*/
++/*.token.attr-equals {*/
++/*  color: theme('colors.slate.500');*/
++/*}*/
++
++/*.token.unit,*/
++/*.language-css .token.function {*/
++/*  color: theme('colors.teal.200');*/
++/*}*/
++
++/*.token.comment,*/
++/*.token.operator,*/
++/*.token.combinator {*/
++/*  color: theme('colors.slate.400');*/
++/*}*/
++
++
++/*==============================================================================*/
++/*==============================================================================*/
++/*==============================================================================*/
++/*==============================================================================*/
++/*==============================================================================*/
++
++.token.comment,
++.token.prolog,
++.token.doctype,
++.token.cdata {
++  @apply text-gray-700 dark:text-gray-300;
++}
++
++.token.punctuation {
++  @apply text-gray-700 dark:text-gray-300;
++}
++
++.token.property,
++.token.tag,
++.token.boolean,
++.token.number,
++.token.constant,
++.token.symbol,
++.token.deleted {
++  @apply text-green-500;
++}
++
++.token.selector,
++.token.attr-name,
++.token.string,
++.token.char,
++.token.builtin,
++.token.inserted {
++  @apply text-purple-500;
++}
++
++.token.operator,
++.token.entity,
++.token.url,
++.language-css .token.string,
++.style .token.string {
++  @apply text-yellow-500;
++}
++
++.token.atrule,
++.token.attr-value,
++.token.keyword {
++  @apply text-blue-500;
++}
++
++.token.function,
++.token.class-name {
++  @apply text-pink-500;
++}
++
++.token.regex,
++.token.important,
++.token.variable {
++  @apply text-yellow-500;
++}

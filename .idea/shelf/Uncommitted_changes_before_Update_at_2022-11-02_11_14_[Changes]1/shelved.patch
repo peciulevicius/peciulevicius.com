@@ -1,0 +1,1267 @@
+Index: src/pages/index.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Head from 'next/head';\nimport Image from 'next/future/image';\nimport Link from 'next/link';\nimport { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/components/Icons';\nimport { Container } from '@/components/Container';\nimport Newsletter from '@/components/Newsletter';\nimport Resume from '@/components/Resume';\nimport image1 from '@/images/photos/image-1.jpg';\nimport image2 from '@/images/photos/image-2.jpg';\nimport image3 from '@/images/photos/image-3.jpg';\nimport image4 from '@/images/photos/image-4.jpg';\nimport image5 from '@/images/photos/image-5.jpg';\nimport clsx from 'clsx';\nimport { BlogPostModel } from '@/lib/types';\nimport { Card } from '@/components/Card';\nimport { formatDate } from '@/lib/formatDate';\nimport { getAllBlogPosts } from '@/lib/getAllBlogPosts';\n\nfunction BlogPostCard({ blog }: { blog: BlogPostModel }) {\n  return (\n    <Card as=\"article\">\n      <Card.Title href={`/blog/${blog.slug}`}>{blog.title}</Card.Title>\n      <Card.Eyebrow as=\"time\" dateTime={blog.date} decorate>\n        {formatDate(blog.date)}\n      </Card.Eyebrow>\n      <Card.Description>{blog.description}</Card.Description>\n      <Card.Cta>Read article</Card.Cta>\n    </Card>\n  );\n}\n\nfunction SocialLink({\n  icon: Icon,\n  ...props\n}: {\n  // todo: fix 'any' type\n  icon: any;\n  href: string;\n}): JSX.Element {\n  return (\n    <Link className=\"group -m-1 p-1\" {...props} target=\"_blank\">\n      <Icon className=\"h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300\" />\n    </Link>\n  );\n}\n\nfunction Photos(): JSX.Element {\n  let rotations = [\n    'rotate-2',\n    '-rotate-2',\n    'rotate-2',\n    'rotate-2',\n    '-rotate-2'\n  ];\n\n  return (\n    <>\n      <div className=\"mt-16 sm:mt-20\">\n        <div className=\"scrollbar-thumb scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500/[0.16] scrollbar-thumb-rounded-xl dark:scrollbar-track-slate-500/[0.16] dark:scrollbar-thumb-slate-500/50 -my-4 flex snap-x gap-5 overflow-x-auto px-5 py-4 pb-4 sm:snap-none sm:gap-8 lg:px-0 2xl:justify-center 2xl:overflow-hidden\">\n          {[image1, image2, image3, image4, image5].map((image, imageIndex) => (\n            <div\n              key={image.src}\n              className={clsx(\n                'relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',\n                rotations[imageIndex % rotations.length]\n              )}\n            >\n              <Image\n                src={image}\n                alt=\"\"\n                sizes=\"(min-width: 640px) 18rem, 11rem\"\n                className=\"absolute inset-0 h-full w-full object-cover\"\n              />\n            </div>\n          ))}\n        </div>\n      </div>\n    </>\n  );\n}\n\nexport default function Home({ blogPosts }: { blogPosts: BlogPostModel[] }) {\n  return (\n    <>\n      <Head>\n        <title>\n          Džiugas Pečiulevičius - Software engineer, designer, and aspiring\n          pilot\n        </title>\n        <meta\n          name=\"description\"\n          content=\"I’m Džiugas, a software engineer, designer, and aspiring pilot based in Vilnius City.\"\n        />\n      </Head>\n      <Container className=\"mt-9\">\n        <div className=\"max-w-2xl\">\n          <h1 className=\"text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl\">\n            Software engineer, designer, and aspiring pilot.\n          </h1>\n          <p className=\"mt-6 text-base text-zinc-600 dark:text-zinc-400\">\n            I’m Džiugas, a software engineer and designer based in Vilnius City.\n            I build new projects just to tickle my brain and I love creating UI\n            effects, animations and intuitive, dynamic user experiences.\n          </p>\n          <div className=\"mt-6 flex gap-6\">\n            <SocialLink\n              href=\"https://twitter.com/dpeciulevicius\"\n              aria-label=\"Follow on Twitter\"\n              icon={TwitterIcon}\n            />\n            <SocialLink\n              href=\"https://github.com/peciulevicius\"\n              aria-label=\"Follow on GitHub\"\n              icon={GitHubIcon}\n            />\n            <SocialLink\n              href=\"https://linkedin.com/in/peciulevicius\"\n              aria-label=\"Follow on LinkedIn\"\n              icon={LinkedInIcon}\n            />\n          </div>\n        </div>\n      </Container>\n\n      <Photos />\n\n      <Container className=\"mt-24 md:mt-28\">\n        <div className=\"mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2\">\n          <div className=\"flex flex-col gap-16\">\n            {blogPosts.map((blog) => (\n              <BlogPostCard key={blog.slug} blog={blog} />\n            ))}\n          </div>\n          <div className=\"space-y-10 lg:pl-16 xl:pl-24\">\n            <Newsletter />\n            <Resume />\n          </div>\n        </div>\n      </Container>\n    </>\n  );\n}\n\nexport async function getStaticProps() {\n  return {\n    props: {\n      blogPosts: (await getAllBlogPosts())\n        .slice(0, 2)\n        .map(({ component, ...meta }) => meta)\n    }\n  };\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/pages/index.tsx b/src/pages/index.tsx
+--- a/src/pages/index.tsx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ b/src/pages/index.tsx	(date 1667334425116)
+@@ -11,23 +11,8 @@
+ import image4 from '@/images/photos/image-4.jpg';
+ import image5 from '@/images/photos/image-5.jpg';
+ import clsx from 'clsx';
+-import { BlogPostModel } from '@/lib/types';
+ import { Card } from '@/components/Card';
+-import { formatDate } from '@/lib/formatDate';
+-import { getAllBlogPosts } from '@/lib/getAllBlogPosts';
+-
+-function BlogPostCard({ blog }: { blog: BlogPostModel }) {
+-  return (
+-    <Card as="article">
+-      <Card.Title href={`/blog/${blog.slug}`}>{blog.title}</Card.Title>
+-      <Card.Eyebrow as="time" dateTime={blog.date} decorate>
+-        {formatDate(blog.date)}
+-      </Card.Eyebrow>
+-      <Card.Description>{blog.description}</Card.Description>
+-      <Card.Cta>Read article</Card.Cta>
+-    </Card>
+-  );
+-}
++import { Avatar } from 'avataaars';
+ 
+ function SocialLink({
+   icon: Icon,
+@@ -44,42 +29,8 @@
+   );
+ }
+ 
+-function Photos(): JSX.Element {
+-  let rotations = [
+-    'rotate-2',
+-    '-rotate-2',
+-    'rotate-2',
+-    'rotate-2',
+-    '-rotate-2'
+-  ];
+-
+-  return (
+-    <>
+-      <div className="mt-16 sm:mt-20">
+-        <div className="scrollbar-thumb scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500/[0.16] scrollbar-thumb-rounded-xl dark:scrollbar-track-slate-500/[0.16] dark:scrollbar-thumb-slate-500/50 -my-4 flex snap-x gap-5 overflow-x-auto px-5 py-4 pb-4 sm:snap-none sm:gap-8 lg:px-0 2xl:justify-center 2xl:overflow-hidden">
+-          {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+-            <div
+-              key={image.src}
+-              className={clsx(
+-                'relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
+-                rotations[imageIndex % rotations.length]
+-              )}
+-            >
+-              <Image
+-                src={image}
+-                alt=""
+-                sizes="(min-width: 640px) 18rem, 11rem"
+-                className="absolute inset-0 h-full w-full object-cover"
+-              />
+-            </div>
+-          ))}
+-        </div>
+-      </div>
+-    </>
+-  );
+-}
+-
+-export default function Home({ blogPosts }: { blogPosts: BlogPostModel[] }) {
++export default function Home() {
++  // @ts-ignore
+   return (
+     <>
+       <Head>
+@@ -122,15 +73,9 @@
+         </div>
+       </Container>
+ 
+-      <Photos />
+-
+       <Container className="mt-24 md:mt-28">
+         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+-          <div className="flex flex-col gap-16">
+-            {blogPosts.map((blog) => (
+-              <BlogPostCard key={blog.slug} blog={blog} />
+-            ))}
+-          </div>
++          <div className="flex flex-col gap-16"></div>
+           <div className="space-y-10 lg:pl-16 xl:pl-24">
+             <Newsletter />
+             <Resume />
+@@ -140,13 +85,3 @@
+     </>
+   );
+ }
+-
+-export async function getStaticProps() {
+-  return {
+-    props: {
+-      blogPosts: (await getAllBlogPosts())
+-        .slice(0, 2)
+-        .map(({ component, ...meta }) => meta)
+-    }
+-  };
+-}
+Index: src/pages/_app.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import type { AppProps } from 'next/app';\nimport { Header } from '@/components/Header';\nimport { Footer } from '@/components/Footer';\nimport { ThemeProvider } from 'next-themes';\n\nimport '@/styles/globals.css';\n\nfunction MyApp({ Component, pageProps }: AppProps) {\n  return (\n    <>\n      <ThemeProvider attribute=\"class\">\n        <div className=\"fixed inset-0 flex justify-center sm:px-8\">\n          <div className=\"flex w-full max-w-7xl lg:px-8\">\n            <div className=\"w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20\" />\n          </div>\n        </div>\n        <div className=\"relative\">\n          <Header />\n          <main>\n            <Component {...pageProps} />\n          </main>\n          <Footer />\n        </div>\n      </ThemeProvider>\n    </>\n  );\n}\n\nexport default MyApp;\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/pages/_app.tsx b/src/pages/_app.tsx
+--- a/src/pages/_app.tsx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ b/src/pages/_app.tsx	(date 1667331278898)
+@@ -9,11 +9,6 @@
+   return (
+     <>
+       <ThemeProvider attribute="class">
+-        <div className="fixed inset-0 flex justify-center sm:px-8">
+-          <div className="flex w-full max-w-7xl lg:px-8">
+-            <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
+-          </div>
+-        </div>
+         <div className="relative">
+           <Header />
+           <main>
+Index: src/layouts/CodeSnippetsLayout.tsx
+===================================================================
+diff --git a/src/layouts/CodeSnippetsLayout.tsx b/src/layouts/CodeSnippetsLayout.tsx
+deleted file mode 100644
+--- a/src/layouts/CodeSnippetsLayout.tsx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,50 +0,0 @@
+-import Head from 'next/head';
+-import Image from 'next/future/image';
+-import { Container } from '@/components/Container';
+-import { Prose } from '@/components/Prose';
+-
+-// todo: fix 'any' type
+-export function CodeSnippetsLayout({ children, meta, isRssFeed = false }: any) {
+-  if (isRssFeed) {
+-    return children;
+-  }
+-
+-  return (
+-    <>
+-      <Head>
+-        <title>{`${meta.title} - Džiugas Pečiulevičius`}</title>
+-        <meta name="description" content={meta.description} />
+-      </Head>
+-
+-      <Container className="mt-16 lg:mt-32">
+-        <div className="xl:relative">
+-          <div className="mx-auto max-w-2xl">
+-            <article>
+-              <div className="flex justify-between">
+-                <header className="max-w-lg">
+-                  <h1 className="mr-2 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+-                    {meta.title}
+-                  </h1>
+-                  <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+-                    {meta.description}
+-                  </p>
+-                </header>
+-                <div className="mt-2">
+-                  <Image
+-                    alt="logo"
+-                    height={60}
+-                    width={60}
+-                    src={meta.logo}
+-                    className="rounded-full"
+-                  />
+-                </div>
+-              </div>
+-
+-              <Prose className="mt-8">{children}</Prose>
+-            </article>
+-          </div>
+-        </div>
+-      </Container>
+-    </>
+-  );
+-}
+Index: src/lib/getAllCodeSnippets.ts
+===================================================================
+diff --git a/src/lib/getAllCodeSnippets.ts b/src/lib/getAllCodeSnippets.ts
+deleted file mode 100644
+--- a/src/lib/getAllCodeSnippets.ts	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,22 +0,0 @@
+-import glob from 'fast-glob';
+-import * as path from 'path';
+-
+-async function importCodeSnippet(snippetFilename: string) {
+-  let { meta, default: component } = await import(
+-    `../pages/snippets/${snippetFilename}`
+-  );
+-
+-  return {
+-    slug: snippetFilename.replace(/(\/index)?\.mdx$/, ''),
+-    ...meta,
+-    component
+-  };
+-}
+-
+-export async function getAllCodeSnippets() {
+-  let codeSnippetFilenames = await glob(['*.mdx', '*/index.mdx'], {
+-    cwd: path.join(process.cwd(), 'src/pages/snippets')
+-  });
+-
+-  return await Promise.all(codeSnippetFilenames.map(importCodeSnippet));
+-}
+Index: src/pages/blog/tables-bullets-and-other-blog-functionality.mdx
+===================================================================
+diff --git a/src/pages/blog/tables-bullets-and-other-blog-functionality.mdx b/src/pages/blog/tables-bullets-and-other-blog-functionality.mdx
+deleted file mode 100644
+--- a/src/pages/blog/tables-bullets-and-other-blog-functionality.mdx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,181 +0,0 @@
+-import { BlogPostLayout } from '@/layouts/BlogPostLayout';
+-
+-export const meta = {
+-  author: 'Džiugas Pečiulevičius',
+-  date: '2022-10-02',
+-  title: 'Tables, bullets, links and other blog functionality',
+-  description:
+-    'Test blog description goes here. This blog is about testing tables, lists and other functionality.'
+-};
+-
+-export default (props) => <BlogPostLayout meta={meta} {...props} />;
+-
+-This is a test of all markdown possibilities:
+-
+----
+-
+-## Headings
+-
+-## h2 Heading 2
+-
+-### h3 Heading 3
+-
+-#### h4 Heading 4
+-
+----
+-
+-## Horizontal Rules
+-
+----
+-
+----
+-
+----
+-
+----
+-
+-## Emphasis
+-
+-**This is bold text**
+-
+-**This is bold text**
+-
+-_This is italic text_
+-
+-_This is italic text_
+-
+-~~Strikethrough~~
+-
+----
+-
+-## Links
+-
+-[link text][1]
+-
+-[link with title][2]
+-
+-This is [an example](http://example.com/ 'Title') inline link.
+-
+-[This link](http://example.net/) has no title attribute.
+-
+----
+-
+-## Blockquotes
+-
+-> Blockquotes can also be nested...
+->
+-> > ...by using additional greater-than signs right next to each other...
+-> >
+-> > > ...or with spaces between arrows.
+-
+----
+-
+-## Indentation
+-
+-indentation 1-1
+-
+-indentation 1-2
+-indentation 2-1
+-
+----
+-
+-## Lists
+-
+-### Unordered
+-
+-- Create a list by starting a line with `+`, `-`, or `*`
+-- Sub-lists are made by indenting 2 spaces:
+-  - Marker character change forces new list start:
+-    - Ac tristique libero volutpat at
+-    * Facilisis in pretium nisl aliquet
+-    - Nulla volutpat aliquam velit
+-- Very easy!
+-
+-### Ordered
+-
+-#### Numers in sequence
+-
+-1. Lorem ipsum dolor sit amet
+-2. Consectetur adipiscing elit
+-3. Integer molestie lorem at massa
+-
+-#### Numers not in sequence
+-
+-1. You can use sequential numbers...
+-1. ...or keep all the numbers as `1.`
+-
+----
+-
+-## Images
+-
+-![Minion][3]
+-
+-Like links, Images also have a footnote style syntax
+-
+-![Alt text][5]
+-
+-With a reference later in the document defining the URL location.
+-
+----
+-
+-## Tables
+-
+-Left aligned columns
+-
+-| Option | Description                                                               |
+-| ------ | ------------------------------------------------------------------------- |
+-| data   | path to data files to supply the data that will be passed into templates. |
+-| engine | engine to be used for processing templates. Handlebars is the default.    |
+-| ext    | extension to be used for dest files.                                      |
+-
+-Middle aligned columns
+-
+-| Option |                                Description                                |
+-| :----: | :-----------------------------------------------------------------------: |
+-|  data  | path to data files to supply the data that will be passed into templates. |
+-| engine |  engine to be used for processing templates. Handlebars is the default.   |
+-|  ext   |                   extension to be used for dest files.                    |
+-
+-Right aligned columns
+-
+-| Option |                                                               Description |
+-| -----: | ------------------------------------------------------------------------: |
+-|   data | path to data files to supply the data that will be passed into templates. |
+-| engine |    engine to be used for processing templates. Handlebars is the default. |
+-|    ext |                                      extension to be used for dest files. |
+-
+----
+-
+-## Code
+-
+-Inline `code`
+-
+-Indented code
+-
+-    // Some comments
+-    line 1 of code
+-    line 2 of code
+-    line 3 of code
+-
+-Block code "fences"
+-
+-```
+-Sample text here...
+-```
+-
+-Syntax highlighting
+-
+-```js
+-var foo = function (bar) {
+-  return bar++;
+-};
+-
+-console.log(foo(5));
+-```
+-
+----
+-
+-[1]: http://dev.nodeca.com
+-[2]: http://nodeca.github.io/pica/demo/ 'title text!'
+-[3]: https://octodex.github.com/images/dinotocat.png
+-[5]: https://octodex.github.com/images/daftpunktocat-thomas.gif 'The Dojocat'
+Index: src/components/Section.tsx
+===================================================================
+diff --git a/src/components/Section.tsx b/src/components/Section.tsx
+deleted file mode 100644
+--- a/src/components/Section.tsx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,28 +0,0 @@
+-import { ReactNode, useId } from 'react';
+-
+-export function Section({
+-  title,
+-  children
+-}: {
+-  title: string;
+-  children: ReactNode;
+-}) {
+-  let id = useId();
+-
+-  return (
+-    <section
+-      aria-labelledby={id}
+-      className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
+-    >
+-      <div className="grid max-w-3xl grid-cols-1 items-baseline gap-y-8 md:grid-cols-4">
+-        <h2
+-          id={id}
+-          className="text-sm font-semibold text-zinc-800 dark:text-zinc-100"
+-        >
+-          {title}
+-        </h2>
+-        <div className="md:col-span-3">{children}</div>
+-      </div>
+-    </section>
+-  );
+-}
+Index: src/pages/blog/index.tsx
+===================================================================
+diff --git a/src/pages/blog/index.tsx b/src/pages/blog/index.tsx
+deleted file mode 100644
+--- a/src/pages/blog/index.tsx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,67 +0,0 @@
+-import Head from 'next/head';
+-import { SimpleLayout } from '@/layouts/SimpleLayout';
+-import { getAllBlogPosts } from '@/lib/getAllBlogPosts';
+-import { Card } from '@/components/Card';
+-import { formatDate } from '@/lib/formatDate';
+-import { BlogPostModel } from '@/lib/types';
+-
+-function BlogPost({ blog }: { blog: BlogPostModel }) {
+-  return (
+-    <article className="md:grid md:grid-cols-4 md:items-baseline">
+-      <Card className="md:col-span-3">
+-        <Card.Title href={`/blog/${blog.slug}`}>{blog.title}</Card.Title>
+-        <Card.Eyebrow
+-          as="time"
+-          dateTime={blog.date}
+-          className="md:hidden"
+-          decorate
+-        >
+-          {formatDate(blog.date)}
+-        </Card.Eyebrow>
+-        <Card.Description>{blog.description}</Card.Description>
+-        <Card.Cta>Read blog</Card.Cta>
+-      </Card>
+-      <Card.Eyebrow
+-        as="time"
+-        dateTime={blog.date}
+-        className="mt-1 hidden md:block"
+-      >
+-        {formatDate(blog.date)}
+-      </Card.Eyebrow>
+-    </article>
+-  );
+-}
+-
+-export default function Blog({ blogPosts }: { blogPosts: BlogPostModel[] }) {
+-  return (
+-    <>
+-      <Head>
+-        <title>Blog - Džiugas Pečiulevičius</title>
+-        <meta
+-          name="description"
+-          content="All of my long-form thoughts on programming, product design, and more, collected in chronological order."
+-        />
+-      </Head>
+-      <SimpleLayout
+-        title="Blog"
+-        intro="All of my long-form thoughts on programming, product design, and more, collected in chronological order. Use the search below to filter by title."
+-      >
+-        <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+-          <div className="flex max-w-3xl flex-col space-y-16">
+-            {blogPosts.map((blog) => (
+-              <BlogPost key={blog.slug} blog={blog} />
+-            ))}
+-          </div>
+-        </div>
+-      </SimpleLayout>
+-    </>
+-  );
+-}
+-
+-export async function getStaticProps() {
+-  return {
+-    props: {
+-      blogPosts: (await getAllBlogPosts()).map(({ component, ...meta }) => meta)
+-    }
+-  };
+-}
+Index: src/layouts/BlogPostLayout.tsx
+===================================================================
+diff --git a/src/layouts/BlogPostLayout.tsx b/src/layouts/BlogPostLayout.tsx
+deleted file mode 100644
+--- a/src/layouts/BlogPostLayout.tsx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,41 +0,0 @@
+-import Head from 'next/head';
+-import { Container } from '@/components/Container';
+-import { formatDate } from '@/lib/formatDate';
+-import { Prose } from '@/components/Prose';
+-
+-// todo: fix 'any' type
+-export function BlogPostLayout({ children, meta, isRssFeed = false }: any) {
+-  if (isRssFeed) {
+-    return children;
+-  }
+-
+-  return (
+-    <>
+-      <Head>
+-        <title>{`${meta.title} - Džiugas Pečiulevičius`}</title>
+-        <meta name="description" content={meta.description} />
+-      </Head>
+-      <Container className="mt-16 lg:mt-32">
+-        <div className="xl:relative">
+-          <div className="mx-auto max-w-2xl">
+-            <article>
+-              <header className="flex flex-col">
+-                <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+-                  {meta.title}
+-                </h1>
+-                <time
+-                  dateTime={meta.date}
+-                  className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
+-                >
+-                  <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
+-                  <span className="ml-3">{formatDate(meta.date)}</span>
+-                </time>
+-              </header>
+-              <Prose className="mt-8">{children}</Prose>
+-            </article>
+-          </div>
+-        </div>
+-      </Container>
+-    </>
+-  );
+-}
+Index: src/pages/blog/code-snippets-test.mdx
+===================================================================
+diff --git a/src/pages/blog/code-snippets-test.mdx b/src/pages/blog/code-snippets-test.mdx
+deleted file mode 100644
+--- a/src/pages/blog/code-snippets-test.mdx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,148 +0,0 @@
+-import { BlogPostLayout } from '@/layouts/BlogPostLayout';
+-
+-export const meta = {
+-  author: 'Džiugas Pečiulevičius',
+-  date: '2022-10-02',
+-  title: 'Code snippets test',
+-  description:
+-    'Test blog description goes here. This blog is about testing the blog code snippets for each language.'
+-};
+-
+-export default (props) => <BlogPostLayout meta={meta} {...props} />;
+-
+----
+-
+-lorem ipsum `This is a test of inline code` lorem ipsum
+-
+----
+-
+-html
+-
+-```html
+-<div class="test">test</div>
+-```
+-
+----
+-
+-js
+-
+-```js
+-import { animate } from '@planetaria/animaginary';
+-
+-export function formatDate(dateString) {
+-  return new Date(`${dateString}T00:00:00Z`).toLocaleDateString('en-US', {
+-    day: 'numeric',
+-    month: 'long',
+-    year: 'numeric',
+-    timeZone: 'UTC'
+-  });
+-}
+-```
+-
+----
+-
+-ts
+-
+-```ts
+-export function formatDate(dateString: string) {
+-  return new Date(`${dateString}T00:00:00Z`).toLocaleDateString('en-US', {
+-    day: 'numeric',
+-    month: 'long',
+-    year: 'numeric',
+-    timeZone: 'UTC'
+-  });
+-}
+-```
+-
+----
+-
+-tsx
+-
+-```tsx
+-import Link from 'next/link';
+-import clsx from 'clsx';
+-import { ReactNode } from 'react';
+-
+-const variantStyles = {
+-  primary:
+-    'bg-zinc-800 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:active:text-zinc-100/70',
+-  secondary:
+-    'bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70'
+-};
+-
+-export function Button({
+-  variant = 'primary',
+-  className,
+-  href,
+-  ...props
+-}: {
+-  type: 'button' | 'submit' | 'reset';
+-  href?: string;
+-  variant?: 'primary' | 'secondary';
+-  className?: string;
+-  children: ReactNode;
+-}) {
+-  className = clsx(
+-    'inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none',
+-    variantStyles[variant],
+-    className
+-  );
+-
+-  return href ? (
+-    <Link href={href} className={className} {...props} />
+-  ) : (
+-    <button className={className} {...props} />
+-  );
+-}
+-```
+-
+----
+-
+-css
+-
+-```css
+-@tailwind base;
+-@tailwind components;
+-@tailwind utilities;
+-
+-pre {
+-  -ms-overflow-style: none; /* IE and Edge */
+-  scrollbar-width: none; /* Firefox */
+-}
+-
+-.rehype-code-title {
+-  @apply rounded-t-lg border border-b-0 border-gray-200 bg-gray-200 px-5 py-3 font-mono text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200;
+-}
+-
+-.rehype-code-title + pre {
+-  @apply mt-0 rounded-t-none;
+-}
+-
+-.highlight-line {
+-  @apply -mx-4 block border-l-4 border-blue-500 bg-gray-100 px-4 dark:bg-gray-800;
+-}
+-```
+-
+----
+-
+-scss
+-
+-```scss
+-.test {
+-  color: red;
+-
+-  &.test2 {
+-    color: blue;
+-  }
+-}
+-```
+-
+----
+-
+-json
+-
+-```json
+-{
+-  "test-package": "1.0.0"
+-}
+-```
+Index: src/lib/getAllBlogPosts.ts
+===================================================================
+diff --git a/src/lib/getAllBlogPosts.ts b/src/lib/getAllBlogPosts.ts
+deleted file mode 100644
+--- a/src/lib/getAllBlogPosts.ts	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,26 +0,0 @@
+-import glob from 'fast-glob';
+-import * as path from 'path';
+-
+-async function importBlogPost(blogFilename: string) {
+-  let { meta, default: component } = await import(
+-    `../pages/blog/${blogFilename}`
+-  );
+-
+-  return {
+-    slug: blogFilename.replace(/(\/index)?\.mdx$/, ''),
+-    ...meta,
+-    component
+-  };
+-}
+-
+-export async function getAllBlogPosts() {
+-  let blogFilenames = await glob(['*.mdx', '*/index.mdx'], {
+-    cwd: path.join(process.cwd(), 'src/pages/blog')
+-  });
+-
+-  let blogPosts = await Promise.all(blogFilenames.map(importBlogPost));
+-
+-  return blogPosts.sort(
+-    (a, z) => new Date(z.date).valueOf() - new Date(a.date).valueOf()
+-  );
+-}
+Index: src/lib/formatDate.ts
+===================================================================
+diff --git a/src/lib/formatDate.ts b/src/lib/formatDate.ts
+deleted file mode 100644
+--- a/src/lib/formatDate.ts	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,8 +0,0 @@
+-export function formatDate(dateString: string) {
+-  return new Date(`${dateString}T00:00:00Z`).toLocaleDateString('en-US', {
+-    day: 'numeric',
+-    month: 'long',
+-    year: 'numeric',
+-    timeZone: 'UTC'
+-  });
+-}
+Index: src/pages/snippets/index.tsx
+===================================================================
+diff --git a/src/pages/snippets/index.tsx b/src/pages/snippets/index.tsx
+deleted file mode 100644
+--- a/src/pages/snippets/index.tsx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,69 +0,0 @@
+-import Image from 'next/future/image';
+-import Head from 'next/head';
+-import { Card } from '@/components/Card';
+-import { SimpleLayout } from '@/layouts/SimpleLayout';
+-import { getAllCodeSnippets } from '@/lib/getAllCodeSnippets';
+-import { CodeSnippetModel } from '@/lib/types';
+-
+-function SnippetCard({ snippet }: { snippet: CodeSnippetModel }) {
+-  return (
+-    <Card as="li">
+-      <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+-        <Image
+-          src={snippet.logo}
+-          alt=""
+-          className="h-8 w-8"
+-          width={200}
+-          height={200}
+-        />
+-      </div>
+-      <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+-        <Card.Link href={`/snippets/${snippet.slug}`}>
+-          {snippet.title}
+-        </Card.Link>
+-      </h2>
+-      <Card.Description>{snippet.description}</Card.Description>
+-    </Card>
+-  );
+-}
+-
+-export default function Snippets({
+-  snippets
+-}: {
+-  snippets: CodeSnippetModel[];
+-}) {
+-  return (
+-    <>
+-      <Head>
+-        <title>Code Snippets - Džiugas Pečiulevičius</title>
+-        <meta
+-          name="description"
+-          content="These are a collection of code snippets I've used in the past and saved."
+-        />
+-      </Head>
+-      <SimpleLayout
+-        title="Code Snippets"
+-        intro="These are a collection of code snippets I've used in the past and saved. Anything from random CSS snippets to Node.js scripts."
+-      >
+-        <ul
+-          role="list"
+-          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+-        >
+-          {snippets.map((snippet) => (
+-            <SnippetCard key={snippet.slug} snippet={snippet} />
+-          ))}
+-        </ul>
+-      </SimpleLayout>
+-    </>
+-  );
+-}
+-
+-export async function getStaticProps() {
+-  return {
+-    props: {
+-      snippets: (await getAllCodeSnippets()).map(
+-        ({ component, ...meta }) => meta
+-      )
+-    }
+-  };
+-}
+Index: src/pages/snippets/snippet-test/index.mdx
+===================================================================
+diff --git a/src/pages/snippets/snippet-test/index.mdx b/src/pages/snippets/snippet-test/index.mdx
+deleted file mode 100644
+--- a/src/pages/snippets/snippet-test/index.mdx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,149 +0,0 @@
+-import { CodeSnippetsLayout } from '@/layouts/CodeSnippetsLayout';
+-import Image from 'next/future/image';
+-import vismaLogo from '../../../images/logos/visma.svg';
+-
+-export const meta = {
+-  author: 'Džiugas Pečiulevičius',
+-  title: 'Loading progress',
+-  description: 'Test blog',
+-  logo: vismaLogo
+-};
+-
+-export default (props) => <CodeSnippetsLayout meta={meta} {...props} />;
+-
+----
+-
+-lorem ipsum `This is a test of inline code` lorem ipsum
+-
+----
+-
+-html
+-
+-```html
+-<div class="test">test</div>
+-```
+-
+----
+-
+-js
+-
+-```js
+-import { animate } from '@planetaria/animaginary';
+-
+-export function formatDate(dateString) {
+-  return new Date(`${dateString}T00:00:00Z`).toLocaleDateString('en-US', {
+-    day: 'numeric',
+-    month: 'long',
+-    year: 'numeric',
+-    timeZone: 'UTC'
+-  });
+-}
+-```
+-
+----
+-
+-ts
+-
+-```ts
+-export function formatDate(dateString: string) {
+-  return new Date(`${dateString}T00:00:00Z`).toLocaleDateString('en-US', {
+-    day: 'numeric',
+-    month: 'long',
+-    year: 'numeric',
+-    timeZone: 'UTC'
+-  });
+-}
+-```
+-
+----
+-
+-tsx
+-
+-```tsx
+-import Link from 'next/link';
+-import clsx from 'clsx';
+-import { ReactNode } from 'react';
+-
+-const variantStyles = {
+-  primary:
+-    'bg-zinc-800 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:active:text-zinc-100/70',
+-  secondary:
+-    'bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70'
+-};
+-
+-export function Button({
+-  variant = 'primary',
+-  className,
+-  href,
+-  ...props
+-}: {
+-  type: 'button' | 'submit' | 'reset';
+-  href?: string;
+-  variant?: 'primary' | 'secondary';
+-  className?: string;
+-  children: ReactNode;
+-}) {
+-  className = clsx(
+-    'inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none',
+-    variantStyles[variant],
+-    className
+-  );
+-
+-  return href ? (
+-    <Link href={href} className={className} {...props} />
+-  ) : (
+-    <button className={className} {...props} />
+-  );
+-}
+-```
+-
+----
+-
+-css
+-
+-```css
+-@tailwind base;
+-@tailwind components;
+-@tailwind utilities;
+-
+-pre {
+-  -ms-overflow-style: none; /* IE and Edge */
+-  scrollbar-width: none; /* Firefox */
+-}
+-
+-.rehype-code-title {
+-  @apply rounded-t-lg border border-b-0 border-gray-200 bg-gray-200 px-5 py-3 font-mono text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200;
+-}
+-
+-.rehype-code-title + pre {
+-  @apply mt-0 rounded-t-none;
+-}
+-
+-.highlight-line {
+-  @apply -mx-4 block border-l-4 border-blue-500 bg-gray-100 px-4 dark:bg-gray-800;
+-}
+-```
+-
+----
+-
+-scss
+-
+-```scss
+-.test {
+-  color: red;
+-
+-  &.test2 {
+-    color: blue;
+-  }
+-}
+-```
+-
+----
+-
+-json
+-
+-```json
+-{
+-  "test-package": "1.0.0"
+-}
+-```
+Index: src/components/Prose.tsx
+===================================================================
+diff --git a/src/components/Prose.tsx b/src/components/Prose.tsx
+deleted file mode 100644
+--- a/src/components/Prose.tsx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,8 +0,0 @@
+-import clsx from 'clsx';
+-
+-// todo: fix 'any' type
+-export function Prose({ children, className }: any) {
+-  return (
+-    <div className={clsx(className, 'prose dark:prose-invert')}>{children}</div>
+-  );
+-}
+Index: src/pages/gear.tsx
+===================================================================
+diff --git a/src/pages/gear.tsx b/src/pages/gear.tsx
+deleted file mode 100644
+--- a/src/pages/gear.tsx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,135 +0,0 @@
+-import Head from 'next/head';
+-import { SimpleLayout } from '@/layouts/SimpleLayout';
+-import { Card } from '@/components/Card';
+-import { Section } from '@/components/Section';
+-import React, { ReactNode } from 'react';
+-
+-function ToolsSection({
+-  children,
+-  ...props
+-}: {
+-  title: string;
+-  children: ReactNode;
+-}) {
+-  return (
+-    <Section {...props}>
+-      <ul role="list" className="space-y-16">
+-        {children}
+-      </ul>
+-    </Section>
+-  );
+-}
+-
+-function Tool({
+-  title,
+-  href,
+-  children
+-}: {
+-  title: string;
+-  href?: string;
+-  children: string;
+-}) {
+-  return (
+-    <Card as="li">
+-      <Card.Title as="h3" href={href}>
+-        {title}
+-      </Card.Title>
+-      <Card.Description>{children}</Card.Description>
+-    </Card>
+-  );
+-}
+-
+-export default function Gear() {
+-  return (
+-    <>
+-      <Head>
+-        <title>Gear - Džiugas Pečiulevičius</title>
+-        <meta
+-          name="description"
+-          content="Software I use, gadgets I love, and other things I recommend."
+-        />
+-      </Head>
+-      <SimpleLayout
+-        title="Software I use, gadgets I love, and other things I recommend."
+-        intro="Here’s a list of my favorite tech I'm currently using for coding."
+-      >
+-        <div className="space-y-20">
+-          <ToolsSection title="Workstation">
+-            <Tool title="MacBook Air M1, 16GB (2020)">
+-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+-            </Tool>
+-            <Tool title="HP 24f 24-inch Display">
+-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+-              enim ad minim veniam, quis nostrud.
+-            </Tool>
+-            <Tool title="Keychron K2v2">
+-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+-              nisi ut aliquip ex ea commodo consequat.
+-            </Tool>
+-            <Tool title="Razer Abyssus 1800">
+-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+-              nisi ut aliquip ex ea commodo consequat.
+-            </Tool>
+-          </ToolsSection>
+-          <ToolsSection title="Development tools">
+-            <Tool title="WebStorm | Neovim">
+-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+-              nisi ut aliquip ex ea commodo consequat.
+-            </Tool>
+-            <Tool title="iTerm2">
+-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+-              nisi ut aliquip ex ea commodo consequat.
+-            </Tool>
+-            <Tool title="TablePlus">
+-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+-              nisi ut aliquip ex ea commodo consequat.
+-            </Tool>
+-          </ToolsSection>
+-          <ToolsSection title="Design">
+-            <Tool title="Figma">
+-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+-            </Tool>
+-          </ToolsSection>
+-          <ToolsSection title="Software">
+-            <Tool title="Raycast">
+-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+-              nisi ut aliquip ex ea commodo consequat.
+-            </Tool>
+-            <Tool title="Reflect">
+-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+-              nisi ut aliquip ex ea commodo consequat.
+-            </Tool>
+-            <Tool title="SavvyCal">
+-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+-              nisi ut aliquip ex ea commodo consequat.
+-            </Tool>
+-            <Tool title="Focus">
+-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+-              nisi ut aliquip ex ea commodo consequat.
+-            </Tool>
+-          </ToolsSection>
+-        </div>
+-      </SimpleLayout>
+-    </>
+-  );
+-}
+Index: src/pages/guestbook.tsx
+===================================================================
+diff --git a/src/pages/guestbook.tsx b/src/pages/guestbook.tsx
+deleted file mode 100644
+--- a/src/pages/guestbook.tsx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,16 +0,0 @@
+-import Head from 'next/head';
+-import { SimpleLayout } from '@/layouts/SimpleLayout';
+-
+-export default function Guestbook() {
+-  return (
+-    <>
+-      <Head>
+-        <title>Guestbook - Džiugas Pečiulevičius</title>
+-        <meta name="description" content="This page is under development..." />
+-      </Head>
+-      <SimpleLayout title="Guestbook" intro="This page is under development...">
+-        <div></div>
+-      </SimpleLayout>
+-    </>
+-  );
+-}
+Index: src/pages/snippets/snippet-test2/index.mdx
+===================================================================
+diff --git a/src/pages/snippets/snippet-test2/index.mdx b/src/pages/snippets/snippet-test2/index.mdx
+deleted file mode 100644
+--- a/src/pages/snippets/snippet-test2/index.mdx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,21 +0,0 @@
+-import { CodeSnippetsLayout } from '@/layouts/CodeSnippetsLayout';
+-import Image from 'next/future/image';
+-import vismaLogo from '../../../images/logos/light-bg-transparent.svg';
+-
+-export const meta = {
+-  author: 'Džiugas Pečiulevičius',
+-  title: 'Short title',
+-  description:
+-    'Test blog description goes here. This blog is about testing nesting and local images.',
+-  logo: vismaLogo
+-};
+-
+-export default (props) => <CodeSnippetsLayout meta={meta} {...props} />;
+-
+-## Sermone fata
+-
+-Lorem markdownum, bracchia in redibam! Terque unda puppi nec, linguae posterior
+-in utraque respicere candidus Mimasque formae; quae conantem cervice. Parcite
+-variatus, redolentia adeunt. Tyrioque dies, naufraga sua adit partibus celanda
+-torquere temptata, erit maneat et ramos, [iam](#) ait dominari
+-potitus! Tibi litora matremque fumantia condi radicibus opusque.
+Index: src/pages/blog/blog-images-test/index.mdx
+===================================================================
+diff --git a/src/pages/blog/blog-images-test/index.mdx b/src/pages/blog/blog-images-test/index.mdx
+deleted file mode 100644
+--- a/src/pages/blog/blog-images-test/index.mdx	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ /dev/null	(revision 13bda26f1760824329aa7393126844c80642b669)
+@@ -1,25 +0,0 @@
+-import { BlogPostLayout } from '@/layouts/BlogPostLayout';
+-import Image from 'next/future/image';
+-import designSystem from './planetaria-design-system.png';
+-
+-export const meta = {
+-  author: 'Džiugas Pečiulevičius',
+-  date: '2022-10-02',
+-  title: 'Local images for blog test',
+-  description:
+-    'Test blog description goes here. This blog is about testing nesting and local images.'
+-};
+-
+-export default (props) => <BlogPostLayout meta={meta} {...props} />;
+-
+-Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system.
+-
+-<Image src={designSystem} alt="design system image" />
+-
+-## Sermone fata
+-
+-Lorem markdownum, bracchia in redibam! Terque unda puppi nec, linguae posterior
+-in utraque respicere candidus Mimasque formae; quae conantem cervice. Parcite
+-variatus, redolentia adeunt. Tyrioque dies, naufraga sua adit partibus celanda
+-torquere temptata, erit maneat et ramos, [iam](#) ait dominari
+-potitus! Tibi litora matremque fumantia condi radicibus opusque.
+Index: src/lib/types.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { ReactElement } from 'react';\n\nexport type ContainerProps = {\n  className?: string;\n  children: ReactElement | ReactElement[];\n};\n\nexport type BlogPostModel = {\n  slug: string;\n  title: string;\n  date: string;\n  description: string;\n};\n\nexport type CodeSnippetModel = {\n  slug: string;\n  title: string;\n  description: string;\n  logo: string;\n};\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/lib/types.ts b/src/lib/types.ts
+--- a/src/lib/types.ts	(revision 13bda26f1760824329aa7393126844c80642b669)
++++ b/src/lib/types.ts	(date 1667330652849)
+@@ -4,17 +4,3 @@
+   className?: string;
+   children: ReactElement | ReactElement[];
+ };
+-
+-export type BlogPostModel = {
+-  slug: string;
+-  title: string;
+-  date: string;
+-  description: string;
+-};
+-
+-export type CodeSnippetModel = {
+-  slug: string;
+-  title: string;
+-  description: string;
+-  logo: string;
+-};
