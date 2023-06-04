@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a46ecfea-4002-47d8-8318-ee33162d323d" name="Changes" comment="add missing files">
-      <change afterPath="$PROJECT_DIR$/.github/dependabot.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+    <list default="true" id="d3b39e88-9004-47a6-9bbe-5fc7e211cf78" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/layout/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/utils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,104 +19,27 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <favorite-branches>
-      <branch-storage>
-        <map>
-          <entry type="LOCAL">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="main" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="ci" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="2003a982-d9a0-4b46-9aa6-af3094046b8d" />
-        <option name="url" value="git@github.com:dziugaspeciulevicius/peciulevicius.com.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2Efygs8CwsO40uiSKWGFp9ad7O6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-    <option name="showMembers" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "PluginDummyText.Genre": "scifi",
-    "Project.color": "180149",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "TODO_SCOPE": "All Places",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/dziugaspeciulevicius/dev/peciulevicius.com/src/components",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/dziugaspeciulevicius/dev/peciulevicius.com/node_modules/prettier",
-    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
-    "ts.external.directory.path": "/Users/dziugaspeciulevicius/dev/peciulevicius.com/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "GitStage.ChangesTree.GroupingKeys": [
-      "directory",
-      "module",
-      "repository"
-    ]
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components" />
-      <recent name="$PROJECT_DIR$/src/styles" />
-      <recent name="$PROJECT_DIR$/src/pages/snippets" />
-      <recent name="$PROJECT_DIR$/src/pages/blog" />
-      <recent name="$PROJECT_DIR$/src/pages" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/pages/snippets" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/pages/blog" />
-      <recent name="$PROJECT_DIR$/src/pages/index" />
-      <recent name="$PROJECT_DIR$/src/layouts" />
-    </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="npm install" />
-      <command value="npm run lint" />
-      <command value="npm run dev" />
-    </option>
-  </component>
   <component name="RunManager" selected="npm.dev">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -158,7 +83,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.lint" />
         <item itemvalue="npm.format" />
@@ -166,403 +90,8 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="a46ecfea-4002-47d8-8318-ee33162d323d" name="Changes" comment="" />
-      <created>1663001047654</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1663001047654</updated>
-      <workItem from="1663001049189" duration="1053000" />
-      <workItem from="1663081139920" duration="220000" />
-      <workItem from="1663169724451" duration="2214000" />
-      <workItem from="1663419599943" duration="680000" />
-      <workItem from="1663431714319" duration="3613000" />
-      <workItem from="1663436183867" duration="8325000" />
-      <workItem from="1663495670983" duration="17226000" />
-      <workItem from="1663774044913" duration="6318000" />
-      <workItem from="1663946171076" duration="1675000" />
-      <workItem from="1663958661938" duration="27643000" />
-      <workItem from="1664215416228" duration="1806000" />
-      <workItem from="1664290790322" duration="9336000" />
-      <workItem from="1664380082850" duration="5538000" />
-      <workItem from="1664467280215" duration="6473000" />
-      <workItem from="1664553922028" duration="136000" />
-      <workItem from="1664554073174" duration="32300000" />
-      <workItem from="1664639273589" duration="34774000" />
-      <workItem from="1664734329107" duration="24490000" />
-      <workItem from="1665502349972" duration="6973000" />
-      <workItem from="1665592564873" duration="6107000" />
-      <workItem from="1665759697077" duration="22839000" />
-      <workItem from="1666118682335" duration="638000" />
-      <workItem from="1666193534788" duration="13658000" />
-      <workItem from="1666718446325" duration="14388000" />
-      <workItem from="1667307796291" duration="3972000" />
-      <workItem from="1667312002002" duration="1225000" />
-      <workItem from="1667321517604" duration="61008000" />
-      <workItem from="1667741269707" duration="20900000" />
-      <workItem from="1667931738475" duration="53661000" />
-      <workItem from="1668352057679" duration="17234000" />
-      <workItem from="1668706649619" duration="17427000" />
-      <workItem from="1670756974253" duration="113000" />
-      <workItem from="1674935510287" duration="13008000" />
-      <workItem from="1678204603966" duration="3854000" />
-      <workItem from="1680021188733" duration="7549000" />
-      <workItem from="1680285285132" duration="14154000" />
-      <workItem from="1682149839857" duration="597000" />
-      <workItem from="1683037576383" duration="545000" />
-      <workItem from="1683044451539" duration="8925000" />
-      <workItem from="1685124632703" duration="5922000" />
-    </task>
-    <task id="LOCAL-00046" summary="fix a bug where secondary button flashes on theme change">
-      <created>1664900840322</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1664900840322</updated>
-    </task>
-    <task id="LOCAL-00047" summary="update packages">
-      <created>1664901128675</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1664901128675</updated>
-    </task>
-    <task id="LOCAL-00048" summary=" update blog theme, custom one + blog improgements are yet to be implemented">
-      <created>1664902129224</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1664902129224</updated>
-    </task>
-    <task id="LOCAL-00049" summary="move snippets page into a folder and rename it into index.tsx">
-      <created>1664988911796</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1664988911796</updated>
-    </task>
-    <task id="LOCAL-00050" summary="add code snippet layout component and todos where type should be fixed">
-      <created>1664990257385</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1664990257387</updated>
-    </task>
-    <task id="LOCAL-00051" summary="change company name displayed in resume component">
-      <created>1665069430380</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1665069430380</updated>
-    </task>
-    <task id="LOCAL-00052" summary="list out snippets">
-      <created>1665512320172</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1665512320173</updated>
-    </task>
-    <task id="LOCAL-00053" summary="list out snippets">
-      <created>1665512329406</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1665512329406</updated>
-    </task>
-    <task id="LOCAL-00054" summary="list out snippets">
-      <created>1665512475381</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1665512475381</updated>
-    </task>
-    <task id="LOCAL-00055" summary="update layout for code snippets">
-      <created>1665765697544</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1665765697544</updated>
-    </task>
-    <task id="LOCAL-00056" summary="update package versions">
-      <created>1665765781515</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1665765781515</updated>
-    </task>
-    <task id="LOCAL-00057" summary="update prop types">
-      <created>1665931034388</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1665931034388</updated>
-    </task>
-    <task id="LOCAL-00058" summary="remove google fonts for now">
-      <created>1666810023404</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1666810023405</updated>
-    </task>
-    <task id="LOCAL-00059" summary="update dependencies">
-      <created>1667234443878</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1667234443878</updated>
-    </task>
-    <task id="LOCAL-00060" summary="add gradient glow to newsletter component">
-      <created>1667326768433</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1667326768433</updated>
-    </task>
-    <task id="LOCAL-00061" summary="update button styling">
-      <created>1667399897828</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1667399897828</updated>
-    </task>
-    <task id="LOCAL-00062" summary="refactor header and hero sections">
-      <created>1667415809704</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1667415809704</updated>
-    </task>
-    <task id="LOCAL-00063" summary="fix hero and header issues">
-      <created>1667416872282</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1667416872282</updated>
-    </task>
-    <task id="LOCAL-00064" summary="update pattern to be clearer on dark mode">
-      <created>1667417082532</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1667417082532</updated>
-    </task>
-    <task id="LOCAL-00065" summary="add cursor effects on hero section">
-      <created>1667419382205</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1667419382205</updated>
-    </task>
-    <task id="LOCAL-00066" summary="update dependencies">
-      <created>1667581361242</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1667581361242</updated>
-    </task>
-    <task id="LOCAL-00067" summary="add transition to buttons">
-      <created>1667647231776</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1667647231776</updated>
-    </task>
-    <task id="LOCAL-00068" summary="remove render canvas which most likely caused flashing (dark / light theme)">
-      <created>1667654756804</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1667654756804</updated>
-    </task>
-    <task id="LOCAL-00069" summary="remove unnecessary files">
-      <created>1667737605890</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1667737605890</updated>
-    </task>
-    <task id="LOCAL-00070" summary="move classes to be used outside svg elements themeselves and have them passed as props">
-      <created>1668019765270</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1668019765271</updated>
-    </task>
-    <task id="LOCAL-00071" summary="add vercel analytics to the project">
-      <created>1668020393720</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1668020393720</updated>
-    </task>
-    <task id="LOCAL-00072" summary="major header and hero section updates">
-      <created>1668192452470</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1668192452470</updated>
-    </task>
-    <task id="LOCAL-00073" summary="add a ref to close button to initially focus on X instead of a logo">
-      <created>1668194125262</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1668194125263</updated>
-    </task>
-    <task id="LOCAL-00074" summary="remove unnecessary components">
-      <created>1668194496049</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1668194496049</updated>
-    </task>
-    <task id="LOCAL-00075" summary="color updates">
-      <created>1668254585230</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1668254585230</updated>
-    </task>
-    <task id="LOCAL-00076" summary="update linear gradients for dark theme">
-      <created>1668257186183</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1668257186183</updated>
-    </task>
-    <task id="LOCAL-00077" summary="fix gradients throwing out errors">
-      <created>1668258506834</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1668258506834</updated>
-    </task>
-    <task id="LOCAL-00078" summary="remove card component and update 404 styling and positioning">
-      <created>1668260824991</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1668260824992</updated>
-    </task>
-    <task id="LOCAL-00079" summary="remove illustration">
-      <created>1668261094688</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1668261094688</updated>
-    </task>
-    <task id="LOCAL-00080" summary="separate illustrations / gradients from icons">
-      <created>1668329605699</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1668329605699</updated>
-    </task>
-    <task id="LOCAL-00081" summary="update avataaar svgs">
-      <created>1668346888410</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1668346888410</updated>
-    </task>
-    <task id="LOCAL-00082" summary="add overflow-hidden">
-      <created>1668346932171</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1668346932171</updated>
-    </task>
-    <task id="LOCAL-00083" summary="update navigation and illustrations">
-      <created>1668348543419</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1668348543419</updated>
-    </task>
-    <task id="LOCAL-00084" summary="update seo `&lt;meta&gt;` tags">
-      <created>1668356818553</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1668356818553</updated>
-    </task>
-    <task id="LOCAL-00085" summary="add under construction banner">
-      <created>1668360869922</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1668360869922</updated>
-    </task>
-    <task id="LOCAL-00086" summary="remove empty section">
-      <created>1668362074131</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1668362074131</updated>
-    </task>
-    <task id="LOCAL-00087" summary="update button texts inside hero section">
-      <created>1668362196844</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1668362196845</updated>
-    </task>
-    <task id="LOCAL-00088" summary="update under construction banner">
-      <created>1668363363994</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1668363363994</updated>
-    </task>
-    <task id="LOCAL-00089" summary="add color similar to theme color for text selection">
-      <created>1668452283548</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1668452283548</updated>
-    </task>
-    <task id="LOCAL-00090" summary="update to latest dependencies">
-      <created>1668710299597</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1668710299598</updated>
-    </task>
-    <task id="LOCAL-00091" summary="bump typescript to 4.9">
-      <created>1668797038892</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1668797038892</updated>
-    </task>
-    <task id="LOCAL-00092" summary="hero redesign test">
-      <created>1685124702183</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1685124702183</updated>
-    </task>
-    <task id="LOCAL-00093" summary="create new next 13.4 project">
-      <created>1685378688843</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1685378688843</updated>
-    </task>
-    <task id="LOCAL-00094" summary="add missing files">
-      <created>1685378899379</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1685378899380</updated>
-    </task>
-    <option name="localTasksCounter" value="95" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -574,33 +103,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="move classes to be used outside svg elements themeselves and have them passed as props" />
-    <MESSAGE value="add vercel analytics to the project" />
-    <MESSAGE value="major header and hero section updates" />
-    <MESSAGE value="add a ref to close button to initially focus on X instead of a logo" />
-    <MESSAGE value="remove unnecessary components" />
-    <MESSAGE value="color updates" />
-    <MESSAGE value="update linear gradients for dark theme" />
-    <MESSAGE value="fix gradients throwing out errors" />
-    <MESSAGE value="remove card component and update 404 styling and positioning" />
-    <MESSAGE value="remove illustration" />
-    <MESSAGE value="separate illustrations / gradients from icons" />
-    <MESSAGE value="update avataaar svgs" />
-    <MESSAGE value="add overflow-hidden" />
-    <MESSAGE value="update navigation and illustrations" />
-    <MESSAGE value="update seo `&lt;meta&gt;` tags" />
-    <MESSAGE value="add under construction banner" />
-    <MESSAGE value="remove empty section" />
-    <MESSAGE value="update button texts inside hero section" />
-    <MESSAGE value="update under construction banner" />
-    <MESSAGE value="add color similar to theme color for text selection" />
-    <MESSAGE value="update to latest dependencies" />
-    <MESSAGE value="bump typescript to 4.9" />
-    <MESSAGE value="hero redesign test" />
-    <MESSAGE value="create new next 13.4 project" />
-    <MESSAGE value="add missing files" />
-    <option name="LAST_COMMIT_MESSAGE" value="add missing files" />
   </component>
 </project>
