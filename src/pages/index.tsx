@@ -86,19 +86,16 @@ export default function Home(
   return (
     <>
       <Head>
-        <title>
-          Džiugas Pečiulevičius - Software engineer, designer, and aspiring
-          pilot
-        </title>
+        <title>Džiugas Pečiulevičius - Software engineer, designer</title>
         <meta
           name="description"
-          content="I’m Džiugas, a software engineer, designer, and aspiring pilot based in Vilnius City."
+          content="I’m Džiugas, a software engineer and a designer based in Vilnius City."
         />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software engineer, designer, and aspiring pilot.
+            Software engineer, designer.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I’m Džiugas, a software engineer and designer based in Vilnius City.

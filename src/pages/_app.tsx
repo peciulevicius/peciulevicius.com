@@ -4,6 +4,7 @@ import { Footer } from '@/components/Footer';
 import { ThemeProvider } from 'next-themes';
 
 import '@/styles/globals.css';
+import UnderDevelopmentBanner from '@/components/UnderDevelopmentBanner';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </div>
         </div>
         <div className="relative">
+          <UnderDevelopmentBanner />
           <Header />
           <main>
             <Component {...pageProps} />
