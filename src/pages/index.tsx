@@ -54,15 +54,25 @@ function Photos(): JSX.Element {
     '-rotate-2'
   ];
 
+  let links = [
+    'https://nextjsconf-pics.vercel.app/',
+    'https://nextjsconf-pics.vercel.app/',
+    'https://nextjsconf-pics.vercel.app/',
+    'https://nextjsconf-pics.vercel.app/',
+    'https://nextjsconf-pics.vercel.app/'
+  ];
+
   return (
     <>
       <div className="mt-16 sm:mt-20">
         <div className="scrollbar-thumb -my-4 flex snap-x gap-5 overflow-x-auto px-5 py-4 pb-4 scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500/[0.16] scrollbar-thumb-rounded-xl dark:scrollbar-track-slate-500/[0.16] dark:scrollbar-thumb-slate-500/50 sm:snap-none sm:gap-8 lg:px-0 2xl:justify-center 2xl:overflow-hidden">
           {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
-            <div
+            <Link
               key={image.src}
+              href={links[imageIndex % links.length]}
+              target="_blank"
               className={clsx(
-                'relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
+                'relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl bg-zinc-100 hover:rotate-6 hover:scale-105 hover:transition-all dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
                 rotations[imageIndex % rotations.length]
               )}
             >
@@ -72,7 +82,7 @@ function Photos(): JSX.Element {
                 sizes="(min-width: 640px) 18rem, 11rem"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-            </div>
+            </Link>
           ))}
         </div>
       </div>
