@@ -59,7 +59,7 @@ function Photos(): JSX.Element {
     'https://nextjsconf-pics.vercel.app/',
     'https://nextjsconf-pics.vercel.app/',
     'https://nextjsconf-pics.vercel.app/',
-    'https://nextjsconf-pics.vercel.app/'
+    'https://luxembourg-germany-2023-01.vercel.app'
   ];
 
   return (
