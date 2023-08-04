@@ -55,11 +55,11 @@ function Photos(): JSX.Element {
   ];
 
   let links = [
-    'https://nextjsconf-pics.vercel.app/',
-    'https://nextjsconf-pics.vercel.app/',
-    'https://nextjsconf-pics.vercel.app/',
-    'https://nextjsconf-pics.vercel.app/',
-    'https://luxembourg-germany-2023-01.vercel.app'
+    'https://luxembourg-germany-2023-01.vercel.app',
+    'https://druskininkai-hike-2022-11-19.vercel.app/',
+    'https://druskininkai-hike-2022-11-19.vercel.app/',
+    'https://labanoras-hike-2022-10-08.vercel.app/',
+    'https://saaremaa-estonia-2020-07.vercel.app/'
   ];
 
   return (
