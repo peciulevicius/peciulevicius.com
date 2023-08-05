@@ -4,7 +4,7 @@ import { MailIcon } from '@/components/Icons';
 function Newsletter() {
   return (
     <div className="group relative">
-      <div className=" absolute -inset-px animate-pulse rounded-2xl bg-gradient-to-r from-amber-600 via-[#3B82F6] to-[#9333EA] blur-md transition duration-1000 group-hover:-inset-1 group-hover:animate-none group-hover:opacity-100 group-hover:duration-1000"></div>
+      <div className=" absolute -inset-px animate-pulse rounded-2xl bg-amber-600 blur-md transition duration-1000 group-hover:-inset-1 group-hover:animate-none group-hover:opacity-100 group-hover:duration-1000"></div>
       <form
         action="/thank-you"
         className="dark: relative h-full w-full rounded-2xl border border-zinc-100 bg-zinc-50 p-6 dark:border-zinc-700/40 dark:bg-zinc-900"
